@@ -3,22 +3,23 @@
 */
 
 body {
-    background-image: url("images/bg1.jpg");
-    background-repeat: repeat;
+  background-image: url("images/bg1.jpg");
+  background-repeat: repeat;
 }
 
 
+
 .navbar-dark .navbar-brand {
-    color: #fff;
+    color: #[header_text_color];
 }
 
 .navbar-dark .navbar-brand:hover,
 .navbar-dark .navbar-brand:focus {
-    color: #fff;
+    color: #[header_text_color];
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: #[header_text_color];
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -34,7 +35,7 @@ body {
 .navbar-dark .navbar-nav .active>.nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #fff;
+    color: #[header_text_color];
 }
 
 .navbar-dark .navbar-toggler {
@@ -47,18 +48,19 @@ body {
 }
 
 .navbar-dark .navbar-text {
-    color: rgba(255, 255, 255, 0.5);
+    color: #[header_text_color];
 }
 
 .navbar-dark .navbar-text a {
-    color: #fff;
+    color: #[header_text_color];
 }
 
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
-    color: #fff;
+    color: #[header_text_color];
 }
 
 .bg-dark {
-    background-color: #343a40 !important;
+    background-color: #[header_color] !important;
 }
+
