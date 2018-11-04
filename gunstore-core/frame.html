@@ -18,15 +18,12 @@
 
     <!--START: page_styles-->
     <link rel="StyleSheet" href="assets/templates/[template]/lib/css/bootstrap.css" type="text/css" />
+    <link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
     [page_styles]
     <link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
+    <link rel="StyleSheet" href="assets/templates/[template]/lib/css/all.css" type="text/css" />
     <!--END: page_styles-->
 
-    <!--START: page_scripts-->
-    <script src="assets/templates/[template]/lib/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="assets/templates/[template]/lib/js/popper.min.js"></script>
-    <script src="assets/templates/[template]/lib/js/bootstrap.js"></script>
-    <!--END: page_scripts-->
 
 </head>
 
@@ -43,8 +40,11 @@
                 <!--START: menuitems_view-->
                 <!--START: TOP_LINK_FORMAT-->
                 <li class="nav-item"><a href="infopage.asp?page=[link_id]" class="nav-link" target="[link_target]">[link_name]</a></li>
-                <!--END: TOP_LINK_FORMAT-->
-                <!--END: menuitems_view-->
+                <!--END: TOP_LINK_FORMAT-->                
+                <!--END: menuitems_view-->                          
+            </ul>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item"><a class="nav-link" href="view_cart.asp"><i class="fas fa-shopping-cart"></i> [ITEMSINCART] - [frame_shopping-cart-text] ([SUBTOTAL])</a></li>
             </ul>
             <form method="get" name="searchForm" action="search.asp" class="form-inline my-2 my-lg-0">
                 <input id="searchlight" name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -75,7 +75,7 @@
                             <!--END: SUB_CATEGORY_FORMAT-->
                         </ul>
                         <!--END: SUB_CATEGORIEST-->
-                    </li>                   
+                    </li>
                     <!--END: CATEGORIES-->
                 </ul>
                 <!--END: FRAME_CATEGORY-->
@@ -88,6 +88,17 @@
         </section>
     </div>
 
+
+    <!--START: page_scripts-->
+    <script src="assets/templates/[template]/lib/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/templates/[template]/lib/js/popper.min.js"></script>
+    <script src="assets/templates/[template]/lib/js/bootstrap.js"></script>
+    <script src="assets/templates/[template]/lib/js/all.js"></script>
+
+    <script src="assets/templates/common-core/js/core.js"></script>
+    <script src="assets/templates/[template]/js/main.js"></script>
+    [page_scripts]
+    <!--END: page_scripts-->
 
     <!--START: 3dcart stats-->
     <div class="stats hidden">
