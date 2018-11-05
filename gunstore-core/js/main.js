@@ -52,7 +52,7 @@ function mailinglist_callfront(form) {
 }
 
 function mailinglist_response(form, response) {
-
+   
     jQuery(form).find('.mailinglist-input').prop("disabled", false);
     jQuery(form).find('.mailinglist-submit').prop("disabled", false);
 
@@ -75,43 +75,43 @@ function mailinglist_response(form, response) {
 
 }
 
-function moveMenu() {
-    var respWidth = window.innerWidth;
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf("safari/") !== -1 && ua.indexOf("chrom") === -1) {
-        respWidth = jQuery(window).width();
-    }
+// function moveMenu() {
+//     var respWidth = window.innerWidth;
+//     var ua = navigator.userAgent.toLowerCase();
+//     if (ua.indexOf("safari/") !== -1 && ua.indexOf("chrom") === -1) {
+//         respWidth = jQuery(window).width();
+//     }
 
-    if (respWidth < 767) {
-        jQuery('#menulinks').appendTo('#mobile-menulinks');
-        jQuery('#categories').appendTo('#mobile-categories');
-    }
-    else {
-        jQuery('#menulinks').appendTo('#menulinks-outer');
-        jQuery('#categories').appendTo('#navbar');
-    }
-}
+//     if (respWidth < 767) {
+//         jQuery('#menulinks').appendTo('#mobile-menulinks');
+//         jQuery('#categories').appendTo('#mobile-categories');
+//     }
+//     else {
+//         jQuery('#menulinks').appendTo('#menulinks-outer');
+//         jQuery('#categories').appendTo('#navbar');
+//     }
+// }
 
 jQuery(document).ready(function () {
 
     update_flyoutcart();
 
-    jQuery('#mobile-menu-trigger').click(function (e) {
-        e.preventDefault();
+    // jQuery('#mobile-menu-trigger').click(function (e) {
+    //     e.preventDefault();
 
-        jQuery('#mobile-menu').show(0, function () {
-            jQuery('body').addClass('menu-open');
-        });
-    });
+    //     jQuery('#mobile-menu').show(0, function () {
+    //         jQuery('body').addClass('menu-open');
+    //     });
+    // });
 
-    jQuery('.mobile-menu-close').click(function (e) {
-        e.preventDefault();
+    // jQuery('.mobile-menu-close').click(function (e) {
+    //     e.preventDefault();
 
-        jQuery('body').removeClass('menu-open');
-        setTimeout(function () {
-            jQuery('#mobile-menu').hide(0);
-        }, 250);
-    });
+    //     jQuery('body').removeClass('menu-open');
+    //     setTimeout(function () {
+    //         jQuery('#mobile-menu').hide(0);
+    //     }, 250);
+    // });
 
 
     var respWidth = window.innerWidth;
@@ -131,12 +131,12 @@ jQuery(document).ready(function () {
 
 });
 
-jQuery(window).load(function () {
-    moveMenu();
-});
-jQuery(window).resize(function () {
-    moveMenu();
-});
+// jQuery(window).on('load',function () {
+//     moveMenu();
+// });
+// jQuery(window).resize(function () {
+//     moveMenu();
+// });
 
 jQuery(function ($) {
 	$('.navbar .dropdown').hover(function () {
@@ -153,4 +153,4 @@ jQuery(function ($) {
 
 });
 
-jQuery("#logo").clone().appendTo("#mobile-logo");
+// jQuery("#logo").clone().appendTo("#mobile-logo");
