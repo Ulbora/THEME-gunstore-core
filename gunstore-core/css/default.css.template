@@ -241,3 +241,90 @@ body {
   float: left;
 }
 
+ul.social-icons li.social-icons-label {
+  font-size: 18px;
+  vertical-align: middle;
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+.social-icons {
+  max-width: 550px;
+  margin: 10px 0;
+  text-align: left;
+}
+.social-icons h3 {
+  margin: 0 0 15px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  text-transform: none;
+  font-weight: 400;
+}
+.social-icons li a {
+  color: #747066;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 0;
+  display: block;
+  text-align: center;
+  font-size: 21px;
+  border: 0px solid #525151;
+  float: left;
+}
+.social-icons li a:hover {
+  opacity: 0.6;
+}
+
+.main-block {
+  background: #fff;
+  margin: auto;
+  max-width: 1500px;
+  overflow: hidden;
+}
+.main-block img {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .main-block,
+  .container {
+    width: 100%;
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .main-block,
+  .container {
+    width: 100%;
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .main-block,
+  .container {
+    width: 100%;
+    max-width: 1500px;
+  }
+}
+
+
+.copyright {
+  margin-top: 25px;
+  border-top: 1px solid #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+.copyright_txt {
+  padding: 8px 0;
+}
+.copyright a {
+  color: #a09e9e;
+}
+
