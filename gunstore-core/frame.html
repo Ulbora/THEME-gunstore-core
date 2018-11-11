@@ -30,7 +30,14 @@
 <body class="[body_class] primary-bg" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
     <!--START: FRAME_MENU-->
     <nav id="menulinks-outer" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">[storename]</a>
+        <div class="col-3">
+            <div class="logo">
+                <!--START: global_header-->
+                <h3 class="store-name">[storename]</h3>
+                <h4 class="store-slogan">[storeslogan]</h4>
+                <!--END: global_header-->
+            </div>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -55,33 +62,36 @@
     </nav>
     <!--END: FRAME_MENU-->
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c1c3c4;">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <!--START: FRAME_CATEGORY-->
-                <ul class="navbar-nav">
-                    <!--START: CATEGORIES-->
-                    <li class="nav-item">
-                        <!--START: CATEGORY_FORMAT-->
-                        <a class="nav-link" href="view_category.asp?cat=CATID" [dropdown_attributes]>CATEGORY</a>
-                        <!--END: CATEGORY_FORMAT-->
+        <div class="lower-nav-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <h2>Categories</h2>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!--START: FRAME_CATEGORY-->
+                    <ul class="navbar-nav">
+                        <!--START: CATEGORIES-->
+                        <li class="nav-item">
+                            <!--START: CATEGORY_FORMAT-->
+                            <a class="nav-link" href="view_category.asp?cat=CATID" [dropdown_attributes]>CATEGORY</a>
+                            <!--END: CATEGORY_FORMAT-->
 
-                        <!--START: SUB_CATEGORIES-->
-                        <ul class="navbar-nav">
-                            <!--START: SUB_CATEGORY_FORMAT-->
-                            <li><a class="nav-link" href="view_category.asp?cat=CATID">CATEGORY</a></li>
-                            <!--END: SUB_CATEGORY_FORMAT-->
-                        </ul>
-                        <!--END: SUB_CATEGORIEST-->
-                    </li>
-                    <!--END: CATEGORIES-->
-                </ul>
-                <!--END: FRAME_CATEGORY-->
-            </div>
-        </nav>
+                            <!--START: SUB_CATEGORIES-->
+                            <ul class="navbar-nav">
+                                <!--START: SUB_CATEGORY_FORMAT-->
+                                <li><a class="nav-link" href="view_category.asp?cat=CATID">CATEGORY</a></li>
+                                <!--END: SUB_CATEGORY_FORMAT-->
+                            </ul>
+                            <!--END: SUB_CATEGORIEST-->
+                        </li>
+                        <!--END: CATEGORIES-->
+                    </ul>
+                    <!--END: FRAME_CATEGORY-->
+                </div>
+            </nav>
+        </div>
     </div>
 
 
@@ -97,9 +107,11 @@
     <!--END: shopping_cart-->
 
     <!--Get current page template-->
-    <section class="main-block clearfix">
-        [page_content]
-    </section>
+    <div class="container">
+        <section class="main-block clearfix">
+            [page_content]
+        </section>
+    </div>
     <!--/Get current page template-->
 
 
