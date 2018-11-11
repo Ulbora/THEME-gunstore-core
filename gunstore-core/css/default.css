@@ -80,6 +80,7 @@ body {
 }
 .site-footer {
   background: #000000;
+  float: left;
   color: #fff;
   margin: 2% 0 0 0;
   padding: .5% 0 .5% 0;
@@ -277,6 +278,7 @@ ul.social-icons li.social-icons-label {
 }
 .main-block {
   background: #fff;
+  float: left;
   margin: auto;
   max-width: 1500px;
   overflow: hidden;
@@ -346,7 +348,9 @@ ul.social-icons li.social-icons-label {
   opacity: 0.6;
 }
 .lower-nav-wrapper {
-  background: grey;
+  float: left;
+  width: 100%;
+  background: #807d7b;
   padding: 2% 0 2% 0;
 }
 @media (min-width: 1024px) {
@@ -367,5 +371,30 @@ ul.social-icons li.social-icons-label {
 @media (max-width: 480px) {
   .lower-nav-wrapper {
     margin: 1% 0 1% 0;
+  }
+}
+.upper-nav-wrapper {
+  float: left;
+  width: 100%;
+  background: #343a40 !important;
+}
+@media (min-width: 1024px) {
+  .upper-nav-wrapper {
+    padding: 2% 0 2% 0;
+  }
+}
+@media (max-width: 1024px) {
+  .upper-nav-wrapper {
+    padding: 2% 0 2% 0;
+  }
+}
+@media (max-width: 768px) {
+  .upper-nav-wrapper {
+    padding: 2% 0 2% 0;
+  }
+}
+@media (max-width: 480px) {
+  .upper-nav-wrapper {
+    padding: 2% 0 2% 0;
   }
 }

@@ -1,4 +1,4 @@
-# Ulbora Labs LLC Theme: gunstore-core
+# Ulbora Labs LLC Theme: gunstore
 
 
 ## History
