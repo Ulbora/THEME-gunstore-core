@@ -1,0 +1,132 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+        <div class="container">
+            <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span
+                            itemprop="name">Home</span></a></li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[giftregistry_home]</span></li>
+            </ol>
+        </div>
+    </section>
+    <!--END: BODY_HEADER-->
+    
+    <section class="page_header">
+        <div class="container">
+            <h1 class="page_heading">[giftregistry_home]</h1>
+            <!--START: myAccount-->
+            <div class="button"><a href="giftregistry_prelogin.asp?action=back" class="btn btn-link"><i class="fas fa-long-arrow-alt-left"></i>
+                    Back</a></div>
+            <!--END: myAccount-->
+        </div>
+    </section>
+    
+    <section id="giftregistryPrelogin" class="giftregistryPrelogin-page-content page-content">
+        <div class="container">
+            <div class="row">
+                <div class="content-area col-lg-12">
+                    <!--START: CATEGORY_HEADER-->
+                    <div class="category-header text-center" id="giftregistry_preloginHeader">[CONTENT]</div>
+                    <!--END: CATEGORY_HEADER-->
+    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--START: continue-->
+                            <div class="continue-button text-center">
+                                <button type="button" class="btn btn-default" onclick="javascript: location.href = 'register.asp?cg=0';">
+                                        <i class="fas fa-pen"></i>Create Account</button>
+                                <span>or</span>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+                                    <i class="fas fa-sign-in-alt"></i>Login</button>
+                            </div>
+                            <!--END: continue-->
+                        </div>
+                    </div>
+    
+                    <!--START: CATEGORY_FOOTER-->
+                    <div class="category-footer text-center" id="giftregistry_preloginFooter">[CONTENT]</div>
+                    <!--END: CATEGORY_FOOTER-->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="loginModalLabel">Login</h4>
+                    <h4 class="modal-title" id="resetPWLabel">Reset Password</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="myaccountLogin" name="myaccountLogin" action="login.asp?ordertracking=[otrack][redirecturl]"
+                        class="bt-flabels js-flabels" method="post">
+                        <div class="loginField bt-flabels__wrapper">
+                            <label for="email">[CustomerInfo_email]</label>
+                            <input type="email" name="email" id="loginEmail" value="" placeholder="[CustomerInfo_email]"
+                                size="30" tabindex="1" class="form-control txtBoxStyle" required />
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="loginField bt-flabels__wrapper">
+                            <label for="password">[CustomerInfo_password]</label>
+                            <input type="password" name="password" id="loginPassword" autocomplete="off" placeholder="Password"
+                                size="12" tabindex="2" class="form-control txtBoxStyle" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary "><i class="fas fa-sign-in-alt"></i> [login_button]</button>
+                        <button type="button" onclick="toggleForms();" class="btn btn-link"><i class="fas fa-sync"></i></i>[login_resetpasswordbutton]</button>
+                    </form>
+                    <form id="forgotPass" name="forgotPass" action="login.asp?action=forgotpass&ordertracking=[otrack][redirecturl]"
+                        method="post" class="bt-flabels js-flabels">
+                        <div class="loginField bt-flabels__wrapper">
+                            <label for="email">[CustomerInfo_email]</label>
+                            <input type="text" name="email" id="ResetEmail" value="" placeholder="" size="30" tabindex="3"
+                                class="form-control txtBoxStyle" required />
+                            <div class="clearfix"></div>
+                        </div>
+                        <button type="button" onclick="resetLoginPass();" class="btn btn-primary"><i class="fas fa-sync"></i>[login_resetpasswordbutton]</button>
+                        <button type="button" onclick="toggleForms();" class="btn btn-link"><i class="fas fa-sign-in-alt"></i>[login_button]</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--START: template_scripts-->
+    <script type="text/javascript" src="/assets/templates/common-core/lib/Parsley/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/templates/common-core/lib/Parsley/bower_components/bootstrap/js/affix.js"></script>
+    <script type="text/javascript" src="/assets/templates/common-core/lib/highlight/highlight.min.js"></script>
+    <script type="text/javascript" src="/assets/templates/common-core/lib/Parsley/dist/parsley.js"></script>
+    <script type="text/javascript">
+        $('#loginEmail').keyup(function () {
+            var loginEmail = $.trim($('#loginEmail').val());
+            $('#ResetEmail').val(loginEmail);
+            var resetEmail = $('#ResetEmail').val();
+            console.log(resetEmail);
+        });
+    
+        function resetLoginPass() {
+            if ($('#forgotPass').parsley().validate()) {
+                //		jQuery('#resetEmail').val(loginEmail);
+                console.log($('#ResetEmail').val());
+                document.forgotPass.submit();
+            }
+            else {
+                console.log('To Reset your password, Please enter your email address and then click "[login_resetpasswordbutton]".');
+            }
+        }
+        function toggleForms() {
+            $('#loginModal .modal-content').toggleClass('PWreset');
+            $('#myaccountLogin, #forgotPass').toggle();
+        }
+    </script>
+    <!--END: template_scripts-->
+    
+    <!--START: template_styles-->
+    <link rel="stylesheet" href="/assets/templates/common-core/css/giftregistry.css" type="text/css" media="screen" />
+    <!--END: template_styles-->
