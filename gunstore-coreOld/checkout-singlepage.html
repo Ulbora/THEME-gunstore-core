@@ -1,0 +1,2687 @@
+<section id="checkoutSinglePage" class="checkoutSinglePage-page-content checkout-page page-content">
+	<div class="container">
+        <div class="row">
+			<div class="content-area col-lg-12 clearfix">
+				<form action="checkout_one.asp" method="post" name="billing" id="billing">
+					<input type="hidden" name="tknio" value="[tknio]">
+					<div id="ab-content" class="row ab-content">
+						<div id="checkout-logo" class="col-md-7 col-xs-12">
+							<div class="logo">
+								<!--START: global_header-->
+								<h3 class="store-name">[storename]</h3>
+								<h4 class="store-slogan">[storeslogan]</h4>
+								<!--END: global_header-->
+							</div>
+						</div>
+
+						<!--START: CATEGORY_HEADER-->
+						<div class="category-header col-md-7 col-xs-12">
+							<div id="checkoutSinglePageHeader">[CONTENT]</div>
+						</div>
+						<!--END: CATEGORY_HEADER-->
+
+						<div id="checkout-right" class="col-md-5 col-xs-12 bg-alternative showcart-md col-height pull-right rightCol">
+							<section class="row-full cart-toggle bg-alternative hidden-md hidden-lg">
+								<div class="container">
+									<div class="row">
+										<div class="col-xs-12 text-right"><span class="pull-left"><h4 class="module-expand expanded" data-toggle="collapse" data-target="#chkShoppingCartCollapse"><i class="icon-basket"></i></h4></span> <h5 class="text-success cart-total cart-balance-item">--.--</h5></div>
+									</div>
+								</div>
+							</section>
+                            <div class="row hidden-xs order-summary-header">
+                                <div class="col-xs-6">
+                                    <h3>Order Summary</h3>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <a href="/view_cart.asp">Edit Cart</a>
+                                </div>
+                            </div>
+							<div id="chkShoppingCartCollapse" class="collapse in">
+								<div id="chkShoppingCart" class="chkShoppingCart scrollbox scrollbox_delayed">
+									<div class="scrollbox-content">
+										<!--START: SHOPPING_CART_ITEM-->
+										<div class="row cart-items">
+											<div class="main">
+												<div class="col-sm-2 col-xs-3 vcenter">
+													<div class="product-image">
+														<!--START: itemthumbnail--><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="[THUMBNAIL]" id="tl" /></a><!--END: itemthumbnail-->
+														<!--START: thumbnailnolink--><img src="[THUMBNAIL]" id="tnl" /><!--END: thumbnailnolink-->
+														<span>[ITEM_QUANTITY]</span>
+													</div>
+												</div>
+												<div class="col-sm-8 col-xs-6 vcenter">
+													<div class="product-name">
+														<!--START: itemnamelink--><span><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a></span><!--END: itemnamelink-->
+														<!--START: itemnamenolink--><span id="spnItemName">[ITEM_NAME]</span><!--END: itemnamenolink-->
+														<div class="base-price">[ITEM_PRICE]</div>
+													</div>
+												</div>
+												<div class="col-sm-2 col-xs-3 vcenter">
+													<div class="product-info text-right">[ITEM_SUBTOTAL]</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+										<!--END: SHOPPING_CART_ITEM-->
+									</div>
+								</div>
+
+								<div id="total_div">
+									<!--START: total_template_noshipping-->
+									<div class="row cart-tally">
+										<div class="totalinstructions col-xs-12">[checkout3_totalinstructions]</div>
+									</div>
+									<!--END: total_template_noshipping-->
+
+									<!--START: total_template-->
+									<div class="row cart-tally">
+										<!--START: apply_coupon-->
+										<div id="divApplyCoupon" class="applyCoupon clearfix">
+											<div class="coupon-header header col-sm-12">
+												<h3 class="page_heading">[viewcart_coupon-header]</h3>
+												<div class="clearfix"></div>
+											</div>
+
+											<div class="coupon-field clearfix">
+												<div class="col-sm-9">
+													<div class="labelholder">
+														<input id="coupon" placeholder="[viewcart_coupon-message]" onchange="clearContent(this);" maxlength="30" value="" name="coupon_code" class="txtBoxStyle form-control" />
+													</div>
+												</div>
+												<div class="col-sm-3 coupon-apply">
+													<button type="button" onclick="applyCoupon(this.form.coupon_code.value);" class="btn btn-default form-control">Apply</button>
+												</div>
+											</div>
+											<div name="divInvalidCoupon" id="divInvalidCoupon" style="display:[invalidCouponDisplay];" class="col-xs-12">
+												<div class="alert alert-danger">[viewcart_coupon-invalid]</div>
+											</div>
+											<div class="coupon-applied col-xs-12">[divCouponApplied]</div>
+										</div>
+										<!--END: apply_coupon-->
+
+
+										<div class="clearfix total_div">
+											<div class="total_items col-xs-6">[shoppingcart_subtotal]</div>
+											<div class="total_subtotal col-xs-6 text-right">[SUBTOTAL]</div>
+										</div>
+
+										<!--START: BUYSAFE-->
+										<div class="clearfix total_div">
+											<div class="total_buysafe-logo col-xs-6"><img src="assets/templates/common/images/buysafe.gif" alt="" /></div>
+											<div class="total_buysafe col-xs-6 text-right">[buysafe_totalbondcost]</div>
+										</div>
+										<!--END: BUYSAFE-->
+
+
+										<!--START: HANDLING-->
+										<div class="clearfix total_div">
+											<div class="total_handling-item col-xs-6">[handling_itemname]</div>
+											<div class="total_handling-price col-xs-6 text-right">[handling_price]</div>
+										</div>
+										<!--END: HANDLING-->
+
+										<div class="clearfix">
+											<div class="total_cart-shipping col-xs-6">[shoppingcart_shipping]</div>
+											<div class="total_shipping col-xs-6 text-right">[SHIPPING]</div>
+										</div>
+
+										<div class="clearfix total_div">
+											<div class="total_cart-taxes col-xs-6">[shoppingcart_taxes]</div>
+											<div class="total_taxes col-xs-6 text-right">[TAX]</div>
+										</div>
+
+									</div>
+									<div class="row cart-grandtotal">
+                                        <!--START: real_total-->
+                                        <div class="clearfix total_div [due_amount_class]">
+                                            <div class="total_cart-total col-xs-6">[shoppingcart_total]</div>
+                                            <div class="total_total col-xs-6 text-right total_due_amount">[TOTAL]</div>
+                                        </div>
+                                        <!--END: real_total-->
+
+                                        <!--START: DISCOUNTS-->
+                                        <div class="clearfix total_div">
+                                            <div class="total_discount-detail col-xs-6">
+                                                [shoppingcart_discount]: <a href="javascript:showDiscountDetails();">(details)</a>
+                                            </div>
+                                            <div class="total_discount col-xs-6 text-right">- [DISCOUNT]</div>
+                                        </div>
+                                        <!--START: PROMOTIONS-->
+                                        <div id="divDiscountDetails" name="divDiscountDetails" style="display:none;">
+                                            <div class="clearfix">
+                                                <div class="col-xs-6 total_promotion"><small>Promotion Name</small></div>
+                                                <div class="col-xs-6 text-right">
+                                                    <!--START: DISPLAY_PROMOS-->
+                                                    <small>
+                                                        <span class="total_promotion-name">[promotion_name]</span>
+                                                        <span class="button right">
+                                                            <!--START: REMOVE_PROMO-->
+                                                            <a href="javascript:removeCoupon('[id]');" class="icon-btn icon-btn-close">(&times; Remove)</a>
+                                                            <!--END: REMOVE_PROMO-->
+                                                        </span>
+                                                    </small>
+                                                    <!--END: DISPLAY_PROMOS-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--END: PROMOTIONS-->
+                                        <!--END: DISCOUNTS-->
+
+                                        <!--START: GIFTCERTS-->
+                                        <div class="clearfix total_div">
+                                            <div class="total_cart-giftcerts col-sm-8 col-xs-6">
+                                                [shoppingcart_giftcertificate]: <a href="javascript:showGiftCertDetails();">(details)</a>
+                                            </div>
+                                            <div class="total_giftcerts col-sm-4 col-xs-6 text-right">- [GIFTCERTS]</div>
+                                        </div>
+
+                                        <div id="divGiftCertDetails" name="divGiftCertDetails" style="display:none;">
+                                            <div class="clearfix">
+                                                <div class="giftcerts-name col-xs-4"><label>Gift Code</label></div>
+                                                <div class="giftcerts-amount col-xs-4"><label>Amount</label></div>
+                                                <div class="giftcerts-balance col-xs-4"><label>Balance</label></div>
+                                            </div>
+                                            <!--START: GIFTCERTS_DETAILS_ITEMS-->
+                                            <div class="clearfix">
+                                                <div class="giftcerts-name col-xs-4">[certificate_name] (<a href="javascript:removeCoupon('[id]');"><i class="icon-cancel"></i></a>)</div>
+                                                <div class="giftcerts-amount col-xs-4">[discount_amount]</div>
+                                                <div class="giftcerts-balance col-xs-4">[discount_balance]</div>
+                                            </div>
+                                            <!--END: GIFTCERTS_DETAILS_ITEMS-->
+                                        </div>
+                                        <!--END: GIFTCERTS-->
+
+                                        <!--START: STORECREDIT-->
+                                        <div class="clearfix total_div">
+                                            <div class="col-sm-8 col-xs-6">
+                                                <div class="total_cart-giftcerts">[shoppingcart_storecredit-title] <strong>([CREDITBALANCE])</strong></div>
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6 text-right">
+                                                <div class="total_giftcerts">- [STORECREDITS]</div>
+                                            </div>
+                                        </div>
+                                        <!--END: STORECREDIT-->
+
+                                        <!--START: real_balance-->
+										<div id="divBalance" class="remaining-balance clearfix total_div">
+											<div class="total_cart-balance col-sm-8 col-xs-6">[shoppingcart_balance]</div>
+											<div class="col-sm-4 col-xs-6 total_balance total_due_amount price text-right">[BALANCE]</div>
+										</div>
+                                        <!--END: real_balance-->
+									</div>
+									<input type="hidden" name="hdnBalance" id="hdnBalance" value="[balance_nocurrency]" />
+									<!--END: total_template-->
+								</div>
+
+							</div>
+						</div>
+
+						<div id="checkout-left" class="col-md-7 col-xs-12 col-height leftCol">
+							<div class="quickpay checkout-section">
+                                <div class="row">
+                                    <!--START: checkoutByAmazon-->
+                                    <div class="checkoutByAmazon chkField col-sm-6">
+                                        <div class="payment-method">[amazon_cba_form]</div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: checkoutByAmazon-->
+                                    <!--START: Google_Pay-->
+                                    <div class="chkField col-sm-6">
+                                        [GooglePay]
+                                    </div>
+                                    <!--END: Google_Pay-->
+                                    <!--START: stripe_applepay_button-->
+                                    <div class="stripe_applepay chkField col-sm-6">
+                                        [stripeApplePay]
+                                    </div>
+                                    <!--END: stripe_applepay_button-->
+                                </div>
+                            </div>
+
+							<!--START: account_login2-->
+							<div class="createNewAccount">
+								<div class="header clearfix">
+									<h3 class="page_heading">[checkout1_Header-createnewaccount]</h3>
+								</div>
+
+								<!--START: fbconnect-->
+								<div class="row chkField">
+									<div class="col-md-6 clearfix">
+										<div class="fbconnect">
+											<a onclick="popup('social_login.asp?p=fl&return=checkout', 1000, 550)" href="#" title="Sign in with Facebook" class="btn btn-facebook"><i class="icon-facebook"></i> Sign in with Facebook</a>
+										</div>
+
+										<span class="fbconnect-or">Or</span>
+									</div>
+								</div>
+								<!--END: fbconnect-->
+
+								<div class="row chkField">
+									<div class="col-sm-6">
+										<div class="row">
+											<div class="chkField col-xs-12 clearfix">
+												<label for="billing_email" class="validation-field labelholder">
+													<input placeholder="[CustomerInfo_email]" name="billing_email" type="text" id="billing_email" onchange="clearContent(this);updateOrderEmail();" value="[email]" tabindex="1" maxlength="100" class="form-control txtBoxStyle" required />
+													<!--START: emailrequired-->
+													<!--START: req_email-->
+						  							<span class="required-indicator"></span>
+													<!--END: req_email-->
+													<!--END: emailrequired-->
+												</label>
+											</div>
+
+											<!--START: confirm_email-->
+											<div class="chkField col-xs-12 clearfix">
+												<label for="billing_confirmemail" class="validation-field labelholder">
+													<input placeholder="[CustomerInfo_confirmemail]" type="text" size="25" name="billing_confirmemail" id="billing_confirmemail" value="[email]" tabindex="2" maxlength="100" class="txtBoxStyle form-control" required />
+													<!--START: emailrequired-->
+													<!--START: req_email-->
+						  							<span class="required-indicator"></span>
+													<!--END: req_email-->
+													<!--END: emailrequired-->
+												</label>
+											</div>
+											<!--END: confirm_email-->
+										</div>
+                                    </div>
+
+									<div id="passwordFields" class="col-sm-6 password-fields" style="display:none;">
+										<div class="row">
+											<div class="chkField col-xs-12 clearfix">
+												<label for="pass" class="validation-field labelholder">
+													<input type="password" name="pass" id="pass" placeholder="Password" autocomplete="off" tabindex="3" class="form-control txtBoxStyle" [callfunctionverifystrongpass] required />
+													<!--START: passwordrequired-->
+													<!--START: req_pass-->
+													<span class="required-indicator"></span>
+													<!--END: req_pass-->
+													<!--END: passwordrequired-->
+												</label>
+
+												<!--START: PasswordMSG-->
+												<div class="PasswordMSG">
+													<p>[CustomerInfo_password_policy]</p>
+												</div>
+												<!--END: PasswordMSG-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<!--START: registerGuest-->
+									<div class="chkField col-xs-12 clearfix">
+										<div class="checkbox-format checkbox-format-checkout">
+											<input type="checkbox" value="1" id="registerGuest" name="registerguest" tabindex="4"/>
+											<label for="registerGuest">Remember me! Create my [store_name] account.</label>
+										</div>
+									</div>
+									<!--END: registerGuest-->
+
+									<!--START: recurmessage-->
+									<div class="recurmessage chkField col-sm-12 clearfix">
+                                        <div class="alert alert-danger"><em class="error">[recurringorders_login-required]</em></div>
+									</div>
+									<!--END: recurmessage-->
+								</div>
+							</div>
+							<!--END: account_login2-->
+
+
+							<!--START: account_login1-->
+                            <div class="account_login account_login1 checkout-section">
+                                <div class="chkField">[checkout1_loginmessage] <a href="#" class="btn btn-link" data-toggle="modal" data-target="#loginModal">[checkout1_login]</a>
+								</div>
+                            </div>
+							<!--END: account_login1-->
+
+
+							<!--START: GIFT_REGISTRY_SHIPPING-->
+							<input type="hidden" name="giftreg_shipping_firstname" id="giftreg_shipping_firstname" value="[giftreg_shipping_firstname]" />
+							<input type="hidden" name="giftreg_shipping_lastname" id="giftreg_shipping_lastname" value="[giftreg_shipping_lastname]" />
+							<input type="hidden" name="giftreg_shipping_company" id="giftreg_shipping_company" value="[giftreg_shipping_company]" />
+							<input type="hidden" name="giftreg_shipping_phone" id="giftreg_shipping_phone" value="[giftreg_shipping_phone]" />
+							<input type="hidden" name="giftreg_shipping_address" id="giftreg_shipping_address" value="[giftreg_shipping_address]" />
+							<input type="hidden" name="giftreg_shipping_address2" id="giftreg_shipping_address2" value="[giftreg_shipping_address2]" />
+							<input type="hidden" name="giftreg_shipping_city" id="giftreg_shipping_city" value="[giftreg_shipping_city]" />
+							<input type="hidden" name="giftreg_shipping_zip" id="giftreg_shipping_zip" value="[giftreg_shipping_zip]" />
+							<input type="hidden" name="giftreg_shipping_country" id="giftreg_shipping_country" value="[giftreg_shipping_country]" />
+							<input type="hidden" name="giftreg_shipping_state" id="giftreg_shipping_state" value="[giftreg_shipping_state]" />
+                            <div class="giftregInstructions checkout-section">
+                                <div class="header">
+                                    <h3 class="page_heading">[checkout1_Header-giftreg]</h3>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <p>[checkout1_Header-giftreg-instructions]</p>
+                                <div class="select-giftreg-button">
+                                    <button type="button" name="cmdRegShip" id="cmdRegShip" class="btn btn-default" onclick="javascript:selectGiftRegAddress();"><i class="icon-pencil"></i> Select Registry Address</button>
+                                </div>
+                            </div>
+                            <!--END: GIFT_REGISTRY_SHIPPING-->
+
+							<div id="billing_info" class="checkout-section">
+								<div class="header clearfix">
+                                    <h3 class="page_heading">[account_billing-info]</h3>
+                                </div>
+
+								<div class="row">
+									<!--START: SAVE_ADDRESSES-->
+                                    <div class="chkField col-sm-12">
+                                        <label for="save_address">[checkout1_address-book]</label>
+                                        <select name="save_address" onchange="javascript:filladdress_form(this,'billing','billing');check_address('billing');" id="save_address" tabindex="5" class="form-control txtBoxStyle">
+                                            [address_list]
+                                        </select>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: SAVE_ADDRESSES-->
+
+									<div class="chkField col-sm-6 clearfix">
+                                        <label for="billing_firstname" class="validation-field labelholder">
+											<input name="billing_firstname" type="text" id="billing_firstname" value="[billing_firstname]" placeholder="[CustomerInfo_firstname]" size="15" tabindex="6" maxlength="100" class="form-control txtBoxStyle" required />
+											<!--START: req_billing_firstname-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_firstname-->
+										</label>
+                                    </div>
+                                    <div class="chkField col-sm-6 clearfix">
+                                        <label for="billing_lastname" class="validation-field labelholder">
+											<input name="billing_lastname" type="text" id="billing_lastname" value="[billing_lastname]" placeholder="[CustomerInfo_lastname]" size="15" tabindex="7" maxlength="100" class="form-control txtBoxStyle" required />
+											<!--START: req_shipping_lastname-->
+											<span class="required-indicator"></span>
+											<!--END: req_shipping_lastname-->
+										</label>
+                                    </div>
+
+									<div class="chkField col-sm-12 clearfix">
+                                        <label for="billing_company" class="validation-field labelholder">
+											<input name="billing_company" type="text" id="billing_company" value="[billing_company]" placeholder="[CustomerInfo_company]" size="25" tabindex="8" maxlength="255" class="form-control txtBoxStyle" />
+										</label>
+                                    </div>
+
+									<div class="chkField col-sm-8 clearfix">
+                                        <label for="billing_address" class="validation-field labelholder">
+											<input name="billing_address" type="text" id="billing_address" value="[billing_address]" placeholder="[CustomerInfo_address]" size="25" tabindex="9" maxlength="255" class="form-control txtBoxStyle" onchange="clearContent(this);[po_box_disabled_billing]" required />
+											<!--START: req_billing_address-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_address-->
+										</label>
+                                    </div>
+                                    <div class="chkField col-sm-4 clearfix">
+                                        <label for="billing_address2" class="validation-field labelholder">
+											<input name="billing_address2" type="text" id="billing_address2" value="[billing_address2]" placeholder="[CustomerInfo_address2]" size="25" tabindex="10" maxlength="50" class="form-control txtBoxStyle" />
+										</label>
+                                    </div>
+
+									<div class="chkField col-sm-12 clearfix">
+                                        <label for="billing_city" class="validation-field labelholder">
+											<input name="billing_city" type="text" id="billing_city" value="[billing_city]" placeholder="[CustomerInfo_city]" size="25" tabindex="11" maxlength="100" class="form-control txtBoxStyle" required />
+											<!--START: req_billing_city-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_city-->
+										</label>
+                                    </div>
+                                    <div class="chkField col-sm-5 clearfix">
+                                        <label for="billing_country" class="validation-field labelholder" data-label="[CustomerInfo_country]">
+											<select name="billing_country" onchange="this.form.billing_zip.value = ''; populateState('billing_state', 'billing_country', '', true, '[CustomerInfo_state]'); check_stateValidator('billing'); check_address('billing');" tabindex="12" class="form-control txtBoxStyle" id="billing_country" required >[CountryDropDown]</select>
+											<!--START: req_billing_country-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_country-->
+										</label>
+                                    </div>
+
+									<div class="chkField col-sm-4 state-select clearfix">
+                                        <label for="billing_state" class="validation-field labelholder" data-label="[CustomerInfo_state]">
+											<select id="billing_state" name="billing_state" tabindex="13" class="form-control txtBoxStyle" required></select>
+											<!--START: req_billing_state-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_state-->
+										</label>
+                                    </div>
+                                    <div class="chkField col-sm-3 clearfix">
+                                        <label for="billing_zip" class="validation-field labelholder">
+											<input name="billing_zip" type="text" id="billing_zip" value="[billing_zip]" placeholder="[CustomerInfo_zip]" size="10" tabindex="14" maxlength="20" class="form-control txtBoxStyle" onChange="check_address('billing');" required />
+											<!--START: req_billing_zip-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_zip-->
+										</label>
+                                    </div>
+
+									<div class="chkField col-sm-12 clearfix">
+                                        <label for="billing_phone" class="validation-field labelholder">
+											<input name="billing_phone" type="text" onchange="clearContent(this);" id="billing_phone" value="[billing_phone]" placeholder="[CustomerInfo_phone]" tabindex="15" maxlength="50" class="form-control txtBoxStyle" required />
+											<!--START: req_billing_phone-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_phone-->
+										</label>
+                                    </div>
+
+									<!--START: account_logged_in-->
+									<div class="chkField col-sm-12 clearfix">
+                                        <label for="billing_email" class="validation-field labelholder">
+											<input onchange="clearContent(this);updateOrderEmail();" name="billing_email" type="text" id="billing_email" value="[email]" placeholder="[CustomerInfo_email]" tabindex="15" maxlength="100" class="form-control txtBoxStyle" required />
+											<!--START: emailrequired-->
+											<!--START: req_email-->
+											<span class="required-indicator"></span>
+											<!--END: req_email-->
+											<!--END: emailrequired-->
+										</label>
+                                    </div>
+                                    <!--END: account_logged_in-->
+                                    
+                                    <!-- Start FFL Select -->
+                                    <div class="chkField col-sm-3 clearfix">
+                                        <label for="ffl_zip" class="validation-field labelholder">
+											<input name="ffl_zip" type="text" id="ffl_zip" value="" placeholder="FFL In Zip" size="10" tabindex="14" maxlength="20" class="form-control txtBoxStyle" onChange="" required />
+											<!--START: req_billing_zip-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_zip-->
+										</label>
+                                    </div>
+
+									<div class="chkField col-sm-4 state-select clearfix">
+                                        <label for="ffl_list" class="validation-field labelholder" data-label="Choose FFL">
+											<select id="ffl_list" name="ffl_list" tabindex="13" class="form-control txtBoxStyle" required></select>
+											<!--START: req_billing_state-->
+											<span class="required-indicator"></span>
+											<!--END: req_billing_state-->
+										</label>
+                                    </div>
+                                    <!-- End FFL Select -->
+
+									<div class="chkField col-sm-12 clearfix">
+										<div class="checkbox-format checkbox-format-checkout">
+											<input type="checkbox" value="1" id="maillist" name="maillist" [maillist] tabindex="16" /> 
+											<label for="maillist">[checkout1_joinmailinglist]</label>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--START: sameAsBilling1-->
+							<div id="shipping_info" class="checkout-section">
+								<div class="header clearfix">
+                                    <h3 class="page_heading">[checkout1_Header-shippinginformation]</h3>
+                                </div>
+
+								<div class="shipping_info-box">
+
+									<div id="sameasbilling_box" class="sameasbilling_box">
+										<label for="sameasbilling_radio" class="sameasbilling_radio">
+											<input type="radio" class="sameAsBilling" name="sameasbilling_radio" id="sameasbilling_radio" tabindex="17" />
+											<span>Same as billing address</span>
+										</label>
+										
+										<input type="checkbox" value="ON" name="sameAsBilling" id="sameAsBilling" onclick="showHideShipping();check_address('');" checked="checked" style="display:none;" />
+										
+									</div>
+
+									<div class="sameasbilling_box">
+
+										<label for="notsameasbilling_radio" class="sameasbilling_radio">
+											<input type="radio" class="sameAsBilling" name="sameasbilling_radio" id="notsameasbilling_radio" tabindex="18" />
+											<span>Use a different shipping address</span>
+										</label>
+
+										<div id="notsameasbilling_box" class="notsameasbilling_box clearfix" style="display:none;">
+											<!--START: sameAsBilling2-->
+											<!--START: SAVE_ADDRESSES2-->
+											<div class="chkField  col-sm-12">
+												<label for="save_address2">[checkout3_PreviousAddresses]</label>
+												<select type="dropdown" id="save_address2" onchange="javascript:filladdress_form(this,'billing','shipping');check_address('shipping');" name="save_address" tabindex="19" class="form-control txtBoxStyle">
+													[address_list]
+												</select>
+												<div class="clear"></div>
+											</div>
+											<!--END: SAVE_ADDRESSES2-->
+
+
+											<div class="chkField col-sm-6 clearfix">
+												<label for="shipping_firstname" class="validation-field labelholder">
+													<input name="shipping_firstname" type="text" id="shipping_firstname" value="[shipping_firstname]" placeholder="[CustomerInfo_firstname]" size="15" tabindex="20" maxlength="100" class="form-control txtBoxStyle" required />
+													<!--START: req_shipping_firstname-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_firstname-->
+												</label>
+											</div>
+											<div class="chkField col-sm-6 clearfix">
+												<label for="shipping_lastname" class="validation-field labelholder">
+													<input name="shipping_lastname" type="text" id="shipping_lastname" value="[shipping_lastname]" placeholder="[CustomerInfo_lastname]" size="15" tabindex="21" maxlength="100" class="form-control txtBoxStyle" required />
+													<!--START: req_shipping_lastname-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_lastname-->
+												</label>
+											</div>
+
+											<div class="chkField col-sm-12 clearfix">
+												<label for="shipping_company" class="validation-field labelholder">
+													<input name="shipping_company" type="text" id="shipping_company" value="[shipping_company]" placeholder="[CustomerInfo_company]" size="25" tabindex="22" maxlength="255" class="form-control txtBoxStyle" />
+												</label>
+											</div>
+
+											<div class="chkField col-sm-8 clearfix">
+												<label for="shipping_address" class="validation-field labelholder">
+													<input name="shipping_address" type="text" id="shipping_address" value="[shipping_address]" placeholder="[CustomerInfo_address]" size="25" tabindex="23" maxlength="255" class="form-control txtBoxStyle" required />
+													<!--START: req_shipping_address-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_address-->
+												</label>
+											</div>
+											<div class="chkField col-sm-4 clearfix">
+												<label for="shipping_address2" class="validation-field labelholder">
+													<input name="shipping_address2" type="text" id="shipping_address2" value="[shipping_address2]" placeholder="[CustomerInfo_address2]" size="25" tabindex="24" maxlength="50" class="form-control txtBoxStyle" />
+												</label>
+											</div>
+
+											<div class="chkField col-sm-12 clearfix">
+												<label for="shipping_city" class="validation-field labelholder">
+													<input name="shipping_city" type="text" id="shipping_city" value="[shipping_city]" placeholder="[CustomerInfo_city]" size="25" tabindex="25" maxlength="100" class="form-control txtBoxStyle" required />
+													<!--START: req_shipping_city-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_city-->
+												</label>
+											</div>
+											<div class="chkField col-sm-5 clearfix">
+												<label for="shipping_country" class="validation-field labelholder" data-label="[CustomerInfo_country]">
+													<select id="shipping_country" name="shipping_country" data-CustomerInfo_state="[CustomerInfo_state]" tabindex="26" class="form-control txtBoxStyle" id="shipping_country" required="required"></select>
+													<!--START: req_shipping_country-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_country-->
+												</label>
+											</div>
+
+
+											<div class="chkField col-sm-4 state-select clearfix">
+												<label for="shipping_state" class="validation-field labelholder" data-label="[CustomerInfo_state]">
+													<select id="shipping_state" onchange="this.form.shipping_zip.value = ''; check_address('shipping');" name="shipping_state" tabindex="27" class="form-control txtBoxStyle" required="required"></select>
+													<!--START: req_shipping_state-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_state-->
+												</label>
+											</div>
+											<div class="chkField col-sm-3 clearfix">
+												<label for="shipping_zip" class="validation-field labelholder">
+													<input name="shipping_zip" type="text" id="shipping_zip" value="[shipping_zip]" placeholder="[CustomerInfo_zip]" size="10" tabindex="28" maxlength="20" class="form-control txtBoxStyle" onchange="clearContent(this);check_address('shipping');" required />
+													<!--START: req_shipping_zip-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_zip-->
+												</label>
+											</div>
+
+											<div class="chkField col-sm-12 clearfix">
+												<label for="shipping_phone" class="validation-field labelholder">
+													<input name="shipping_phone" type="text" onchange="clearContent(this);" id="shipping_phone" value="[shipping_phone]" placeholder="[CustomerInfo_phone]" tabindex="29" maxlength="50" class="form-control txtBoxStyle" required />
+													<!--START: req_shipping_phone-->
+													<span class="required-indicator"></span>
+													<!--END: req_shipping_phone-->
+												</label>
+											</div>
+					
+												<!--START: sameAsBilling3-->
+												<!--<div class="sameAsBilling3">[checkout3_sameasbillingmessage]</div>-->
+												<!--END: sameAsBilling3-->
+											<!--END: sameAsBilling2-->
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+							<!--END: sameAsBilling1-->
+
+                            <!--START: addressType-->
+                            <div class="addressType clearfix checkout-section">
+                                <div class="header clearfix">
+                                    <h3 class="page_heading">[CustomerInfo_address_type]</h3>
+                                </div>
+                                <select name="shipping_addresstype" id="shipping_addresstype" class="form-control txtBoxStyle" onChange="check_address('addresstype');">
+                                    [addressTypeDropDown]
+                                </select>
+                            </div>
+                            <!--END: addressType--> 
+
+							<div class="divShippingMethod checkout-section">
+								<div class="header clearfix">
+                                    <h3 class="page_heading">
+										[checkout3_Header-shippingmethodinfo]
+										<span class="button pull-right">
+											<a href="javascript:check_address('refresh');" class="icon-btn icon-btn-refresh"><span class="icon-cw"></span> [checkout3_refreshRates]</a>
+										</span>
+									</h3>
+                                </div>
+
+								<!---START: echoFreightOptions-->
+								<div id="divEchoOptions" class="echoFreightOptions boxShadow" style="display:none;">
+									<!--START: echoFreightRegularMsg-->
+									<div>
+										<strong>LTL Shipping options:</strong> the radio buttons below (by default) quote LTL shipping to Residential, Limited Access and truck with Lift Gate Required.
+									</div>
+									<ol>
+										<li>Adjust these buttons for your shipping location.</li>
+										<li>Then click "Refresh Rates" above, and your new cost will show in Shipping (in the Order Total to the right).</li>
+									</ol>
+									<!--END: echoFreightRegularMsg-->
+									<!--START: echoFreightShortMsg-->
+									<ul>
+										<li>Adjust these buttons for your shipping location.</li>
+									</ul>
+									<!--END: echoFreightShortMsg-->
+									<div class="echo-group1">
+										<div class="echo-option">
+											<input type="radio" name="echoFreightOptions" id="echoFreightOptionsBus" onclick="document.getElementById('echoFreightOptionsRes1').checked = false; document.getElementById('echoFreightOptionsRes2').checked = false;" value="22" />
+											Business
+										</div>
+										<div class="echo-option2">
+											<input type="checkbox" name="echoFreightOptions" id="echoFreightOptionsBus1" onclick="document.getElementById('echoFreightOptionsBus').checked = true; document.getElementById('echoFreightOptionsRes').checked = false; document.getElementById('echoFreightOptionsRes1').checked = false; document.getElementById('echoFreightOptionsRes2').checked = false;" value="21" />
+											Lift Gate required
+										</div>
+										<div class="echo-option2">
+											<input type="checkbox" name="echoFreightOptions" id="echoFreightOptionsBus2" onclick="document.getElementById('echoFreightOptionsBus').checked = true; document.getElementById('echoFreightOptionsRes').checked = false; document.getElementById('echoFreightOptionsRes1').checked = false; document.getElementById('echoFreightOptionsRes2').checked = false; check_address('refresh');" value="7" />
+											The driver needs to deliver inside
+										</div>
+									</div>
+									<div class="echo-group2">
+										<div class="echo-option">
+											<input type="radio" [checked18] name="echoFreightOptions" id="echoFreightOptionsRes" onclick="document.getElementById('echoFreightOptionsBus1').checked = false; document.getElementById('echoFreightOptionsBus2').checked = false;" value="18" />
+											Residential
+										</div>
+										<div class="echo-option2">
+											<input type="checkbox" [checked21] name="echoFreightOptions" id="echoFreightOptionsRes1" onclick="document.getElementById('echoFreightOptionsRes').checked = true; document.getElementById('echoFreightOptionsBus').checked = false; document.getElementById('echoFreightOptionsBus1').checked = false; document.getElementById('echoFreightOptionsBus2').checked = false;" value="21" />
+											Lift Gate required
+										</div>
+										<div class="echo-option2">
+											<input type="checkbox" name="echoFreightOptions" id="echoFreightOptionsRes2" onclick="document.getElementById('echoFreightOptionsRes').checked = true; document.getElementById('echoFreightOptionsBus').checked = false; document.getElementById('echoFreightOptionsBus1').checked = false; document.getElementById('echoFreightOptionsBus2').checked = false; check_address('refresh');" value="7" />
+											The driver needs to deliver inside
+										</div>
+									</div>
+								</div>
+								<!--END: echoFreightOptions-->
+								<div id="shipping_div" class="pad10 boxShadow">
+									<div id="shipResult">
+										<p>[checkout3_shippinginstructions]</p>
+									</div>
+								</div>
+
+
+								<!--START: CARRIER--> 
+								<!--START: displayblock-->
+                                <div class="carrierDisplay clearfix">
+                                    <div class="option-shipper"><img src="/assets/templates/common/images/[OPTION-SHIPPER].gif" alt="" /></div>
+                                    <div class="display-rates button right"><a href="javascript:click_ship();" onclick="toggleoff();toggle('sh[OPTION-SHIPPER]');" class="icon-btn icon-btn-refresh">Display Rates</a></div>
+                                </div>
+                                <!--END: displayblock-->
+								<div name="sh[OPTION-SHIPPER]" id="sh[OPTION-SHIPPER]" class="ship all-ship-methods" style="display:none;">
+                                    <!--START: SHIPPING_OPTION-->
+                                    <div class="shippingOption">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="radio-inline"><input type="radio" name="shipping" value="[ID]" [SELECTED] id="radio_ship[ID]" onClick="select_shipping([ID]);" /><span class="shipper-option-desc"><!--[OPTION-SHIPPER]-->[OPTION-DESCRIPTION]</span></div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="shipper-option-price2 text-right">[OPTION-PRICE2]</div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <!--END: SHIPPING_OPTION-->
+                                </div>
+								<!--END: CARRIER--> 
+							</div>
+
+							<!--START: INSURANCE-->
+							<div class="divInsurance checkout-section">
+								<div class="header clearfix">
+									<h3 class="page_heading">[checkout2_insurance]</h3>
+								</div>
+
+								<div class="insurField radio">
+									<label for="add-insurance">
+										<input id="add-insurance" type="radio" name="insurance" value="yes" onclick="javascript:select_shipping(jQuery('input[name=shipping]:checked', '#billing').val());" [insurance_selected] />
+										(+[insurance_cost]) [checkout2_insurance-selected]
+									</label>
+								</div>
+
+								<!--START: optional--> 
+								<div class="insurField radio">
+									<label for="no-insurance">
+										<input id="no-insurance" type="radio" name="insurance" onclick="javascript:select_shipping(jQuery('input[name=shipping]:checked', '#billing').val());" value="no" [no_insurance_selected] />
+										[checkout2_insurance-not-selected]
+									</label>
+								</div>
+								<!--END: optional-->
+							</div>
+							<!--END: INSURANCE-->
+
+							<div id="divPayment" class="divPayment checkout-section">
+								<!--START: PAYMENT_BLOCK-->
+								<div class="header clearfix">
+									<h3 class="page_heading">[checkout3_methodofpaymentselect]</h3>
+								</div>
+
+								<!--START: NO_PAYMENT_BLOCK-->
+								<div class="no-payment-method">There's no payment options available to your address. Please check the entered address and try again.</div>
+								<!--END: NO_PAYMENT_BLOCK-->
+
+								<div id="divPaymentMethods" class="divPaymentMethods">
+									<!--START: checkoutMasterPass-->
+									<div class="checkoutMasterPass clearfix dpm-provider wallet-method">
+										<h4>MasterPass&trade;</h4>
+										<div name="divPaymentOption">
+											<a href="masterpass.asp?ac=token" title="Checkout with MasterPass&trade;"><img id="imgMasterPass" src="assets/templates/common/images/mcpp_wllt_btn_chk_147x034px.png" alt="Checkout with MasterPass&trade;" /></a><br />
+											<a href="javascript:void(0);" title="Learn more about MasterPass&trade;" onclick="window.open('http://www.mastercard.com/mc_us/wallet/learnmore/en/','','scrollbars=no,width=700,height=700'); return false;"><i class="icon-info-circled"></i>Learn more</a>
+										</div>
+									</div>
+									<!--END: checkoutMasterPass-->
+
+									<!--START: checkout_visacheckout-->
+									<div class="checkout_visacheckout dpm-provider wallet-method">
+										<h4>Checkout with Visa Checkout</h4>
+										<div name="divPaymentOption">
+											<img alt="Visa Checkout" class="v-button" role="button" src="[visacheckout_button]" />
+											<script type="text/javascript" src="[visacheckout_jscriptsdk]"></script>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+									<!--END: checkout_visacheckout-->
+
+									<!--START: VME_SELECTED-->
+                                    <div class="dpm-provider vmeSelected wallet-method">
+                                        <h4>V.me by Visa</h4>
+                                        <div name="divPaymentOption">
+                                            <input type="hidden" name="payment" value="online-[id]" checked />
+                                            <img src="assets/templates/common/images/vme_accpt_mark.png" alt="V.me by Visa" />
+                                        </div>
+                                    </div>
+									<!--END: VME_SELECTED-->
+
+                                    <!--START: PPEXPRESS-->
+                                    [PPEXPRESS_SCRIPTS_BLOCK]
+                                    <div class="dpm-provider ppExpress wallet-method">
+                                        <h4>[payment_description]</h4>
+                                        <div name="divPaymentOption">
+                                            <p>[payment_description_message]</p>
+                                            <div id="paypal-button"></div>
+                                        </div>
+                                    </div>
+                                    <!--END: PPEXPRESS-->
+
+									<!--START: PayWithAmazon-->
+                                    <div class="dpm-provider PayWithAmazon wallet-method">
+                                        <h4>Pay With Amazon</h4>
+                                        <div name="divPaymentOption">
+                                            <script type='text/javascript'>
+                                                window.onAmazonLoginReady = function () {
+                                                    amazon.Login.setClientId('[amazonpay_clientid]');
+                                                };
+                                            </script>
+                                            <script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/[amazonpay_sandbox]js/Widgets.js'></script>
+
+                                            <!-- Place this where you would like the Payment Button to appear -->
+                                            <div id="AmazonPayButton"></div>
+                                            <script type="text/javascript">
+                                                var authRequest;
+                                                var amazonOrderReferenceId;
+                                                OffAmazonPayments.Button("AmazonPayButton", "[amazonpay_sellerid]", {
+                                                    type: "PwA",
+                                                    color: "Gold",
+                                                    size: "small",
+                                                    authorization: function () {
+                                                        var loginOptions = { scope: 'profile payments:widget payments:shipping_address', popup: true };
+                                                        authRequest = amazon.Login.authorize(loginOptions, "[amazonpay_domain]/checkout_one.asp?wid=3");
+                                                    },
+                                                    onError: function (error) {
+                                                        alert(error.getErrorMessage());
+                                                        console.log(error);
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+									<!--END: PayWithAmazon-->
+									
+									
+									<!--START: PPCREDIT-->
+									<div class="ppExpress dpm-provider">
+										<h4>
+											<label for="online-[id]-ppc">
+												<span class="ppe-radio">
+													<input name="payment" id="online-[id]-ppc" onclick="javascript: checkoutSwitch(true); window.location.href = 'paypal_express.asp?ch=0&ppc=1';" type="radio" value="online-[id]" />
+												</span>
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div name="divPaymentOption" style="padding:10px;">
+											<div class="ppe-logo" style="width:150px;">
+												<a href="javascript:document.getElementById('online-[id]-ppc').click();"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-medium.png" alt="PayPal Credit" height="35" /></a>
+												<a href="https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=AU826TU8&content=/bmlweb/ppwpsiw.html" alt="PayPal Credit" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_bml_text.png" /></a>
+											</div>
+										</div>
+									</div>
+									<!--END: PPCREDIT-->
+
+									<!--START: PAYPALBRAINTREE-->
+									<div class="ppBraintree dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input onclick="javascript: checkoutSwitch(false); controlDivPayment('[id]'); doPaypalBraintreeClientToken();" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+												<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" />
+												<input type="hidden" id="hdnPayPalBraintreeID" name="hdnPayPalBraintreeID" value="online-[id]" />
+											</label>
+										</h4>
+										<div class="clear"></div>
+                                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                            <div class="row cc-details">
+                                                <div id="divPaypalBraintree" class="col-sm-12"></div>
+                                                <div class="col-sm-12" id="PaypalBraintreeSaveMyCC">
+                                                    <input type="checkbox" name="ff[id]_savecc" id="ff[id]_savecc" value="1" />
+                                                    <label for="ff[id]_savecc">[checkout3_savecc]</label>
+                                                    <input type="hidden" name="ff[id]_saveccenabled" value="1" />
+                                                </div>
+                                            </div>
+                                        </div>
+									</div>
+
+									<script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
+									<script src="https://js.braintreegateway.com/v1/braintree-data.js"></script>
+									<script type="text/javascript">
+										function doPaypalBraintreeClientToken() {
+											if (bolPaypalBRaintreeLoaded == true)
+												return;
+
+											jQuery.ajax({
+												url: "checkout_one.asp?action=GetPaypalbraintreeClientToken&pid=[PaypalBraintree_pid]",
+												dataType: 'json',
+												type: 'POST',
+												cache: false,
+												success: function(strResult) {
+													if (strResult.IsSuccess == 1) {
+														if ("[payment_signature]" == "1")
+															document.getElementById("PaypalBraintreeSaveMyCC").style.display = 'block';
+
+														braintree.setup(
+															strResult.ClientToken,
+															"dropin", {
+										  					container: "divPaypalBraintree",
+															paypal: {
+																singleUse: [single_use],
+																amount: [cart_total],
+																currency: '[currency_code]'
+															},
+										  					onPaymentMethodReceived: function (event) {
+										  						jQuery("#payment_method_nonce").val(event.nonce);
+										  						doCheckout(document.billing);
+										  					},
+										  					onError: function (error) {
+										  						console.log('braintree validation error occurred: ' + error);
+										  					}
+														});
+														BraintreeData.setup(strResult.MerchantID, 'billing', [braintreedata_environment]);
+														bolPaypalBRaintreeLoaded = true;
+													}
+													else
+														alert(strResult.ErrorMsg);
+												},
+												error: reportError
+											});
+										}
+									</script>
+									<!--END: PAYPALBRAINTREE-->
+                                    <!--START: SQUARE-->
+                                    <div class="ccGateway dpm-provider">
+                                        <h4>
+                                            <label for="online-[id]">
+                                                <input onclick="javascript: checkoutSwitch(false); controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                                [payment_description]
+                                            </label>
+                                        </h4>
+                                        <div class="clear"></div>
+                                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;" class="sq_PaymentMethod">
+                                            <div id="divSquare" class="row cc-details">
+                                                <input type="hidden" id="hdnSquareID" name="hdnSquareID" value="online-[id]" />
+                                                <input type="hidden" id="sq_nonce" name="sq_nonce">
+                                                <div class="ccgField col-sm-12">
+                                                    <div class="sq_colleft rr">
+                                                        <label for="creditcardnumber">Credit Card Number <span class="error-img required">*</span></label>
+                                                    </div>
+                                                    <div class="sq_colcenter">
+                                                        <div id="sq-card-number" class="sq_input"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ccgField col-sm-6">
+                                                    <div class="sq_colleft rr">
+                                                        <label>Expiration <span class="error-img required">*</span></label>
+                                                    </div>
+                                                    <div class="sq_colcenter">
+                                                        <div id="sq-expiration-date" class="sq_input"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="ccgField col-sm-6">
+                                                    <div class="sq_colleft rr">
+                                                        <label>CVV2 <span class="error-img required">*</span></label>
+                                                    </div>
+                                                    <div class="sq_colcenter">
+                                                        <div id="sq-cvv" class="sq_input"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="divsquarezip" class="ccgField col-sm-12" style="display: none;">
+                                                    <label>Postal Code</label>
+                                                    <div id="sq-postal-code"></div>
+                                                </div>
+
+                                                <div class="ccgField" style="display:none;padding: 0 30px; margin-bottom:15px;" id="SquareSaveMyCC">
+                                                    <input type="checkbox" name="ff[id]_savecc" value="1" />
+                                                    <div class="left">[checkout3_savecc]</div>
+                                                    <input type="hidden" name="ff[id]_saveccenabled" value="1" />
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <!--START: SaveMyCC2-->
+                                                <div class="ccgField col-sm-12">
+                                                    <input type="checkbox" name="ff[id]_savecc" value="1" />
+                                                    <label for="creditcardnumber">[checkout3_savecc]</label>
+                                                    <input type="hidden" name="ff[id]_saveccenabled" value="1" />
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <!--END: SaveMyCC2-->
+                                                <!--START: SaveMyCCRec2-->
+                                                <div class="ccgField col-sm-12">
+                                                    <label>[checkout3_saveccrecurring]</label>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <!--END: SaveMyCCRec2-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--START: SQUARE_SCRIPTS-->
+                                    <script type="text/javascript">
+	                                    var applicationId = '[Squaredata_environment]';
+	                                    var nsqPaymentForm;
+	                                    jQuery.getScript("https://js.squareup.com/v2/paymentform", function() {
+	                                        initSquare();
+	                                        nsqPaymentForm.build();
+	                                    });
+	                                    // Initializes the payment form. See the documentation for descriptions of
+	                                    function initSquare() {
+		                                    nsqPaymentForm = new SqPaymentForm({
+			                                    applicationId: applicationId,
+			                                    inputClass: 'form-control',
+			                                    inputStyles: [
+				                                    /*{
+					                                    color: '#000'
+				                                    },
+				                                    {
+					                                    fontWeight: 400
+				                                    },
+				                                    {
+					                                    fontSize: '12px'
+				                                    },
+				                                    {
+					                                    fontFamily: 'Tahoma'
+				                                    },
+				                                    {
+					                                    lineHeight: '1em'
+				                                    },
+				                                    {
+					                                    padding: '8px 4px'
+				                                    },
+				                                    {
+					                                    boxShadow: '10px 10px 5px #888888'
+				                                    },
+				                                    {
+					                                    backgroundColor: '#fefefe'
+				                                    }*/
+			                                    ],
+			                                    cardNumber: {
+				                                    elementId: 'sq-card-number',
+				                                    placeholder: ''
+			                                    },
+			                                    cvv: {
+				                                    elementId: 'sq-cvv',
+				                                    placeholder: 'CVV'
+			                                    },
+			                                    expirationDate: {
+				                                    elementId: 'sq-expiration-date',
+				                                    placeholder: 'MM/YY'
+			                                    },
+			                                    postalCode: {
+				                                    elementId: 'sq-postal-code',
+				                                    placeholder: ''
+			                                    },
+			                                    callbacks: {
+				                                    // Called when the SqPaymentForm completes a request to generate a card
+				                                    // nonce, even if the request failed because of an error.
+				                                    cardNonceResponseReceived: function (errors, nonce, cardData) {
+					                                    if (errors) {
+						                                    try {
+							                                    console.log("Encountered errors:");
+							                                    errors.some(function (error) {
+								                                    console.log('  ' + error.message);
+								                                    switch (error.field) {
+									                                    case "cardNumber":
+										                                    jQuery("#sq-card-number").focus();
+										                                    break;
+									                                    case "cvv":
+										                                    jQuery("#sq-cvv").focus();
+										                                    break;
+									                                    case "expirationDate":
+										                                    jQuery("#sq-expiration-date").focus();
+										                                    break;
+								                                    }
+								                                    alert(error.message);
+								                                    return true;
+							                                    });
+						                                    } catch (e) {
+							                                    alert(e);
+						                                    }
+					                                    } else {
+						                                    console.log('  ' + nonce);
+						                                    document.getElementById('sq_nonce').value = nonce;
+						                                    doCheckout(document.billing);
+					                                    }
+				                                    },
+				                                    unsupportedBrowserDetected: function () {
+					                                    alert('Unfortunately there is a problem initianing this transaction, due to the browser version you are using.');
+				                                    },
+				                                    // Fill in these cases to respond to various events that can occur while a
+				                                    // buyer is using the payment form.
+				                                    inputEventReceived: function (inputEvent) {
+					                                    switch (inputEvent.eventType) {
+						                                    case 'focusClassAdded':
+							                                    // Handle as desired
+							                                    break;
+						                                    case 'focusClassRemoved':
+							                                    // Handle as desired
+							                                    break;
+						                                    case 'errorClassAdded':
+							                                    // Handle as desired
+							                                    break;
+						                                    case 'errorClassRemoved':
+							                                    // Handle as desired
+							                                    break;
+						                                    case 'cardBrandChanged':
+							                                    // Handle as desired
+							                                    break;
+						                                    case 'postalCodeChanged':
+							                                    // Handle as desired
+							                                    break;
+					                                    }
+				                                    },
+				                                    paymentFormLoaded: function () {
+					                                    // Fill in this callback to perform actions after the payment form is
+					                                    // done loading (such as setting the postal code field programmatically).
+					                                    nsqPaymentForm.setPostalCode('[billing_zip]');
+				                                    }
+			                                    }
+		                                    });
+	                                    }
+	                                    // This function is called when a buyer clicks the Submit button on the webpage to charge their card.
+	                                    function SquarerequestCardNonce() {
+		                                    nsqPaymentForm.requestCardNonce();
+	                                    }
+                                    </script>
+                                    <!--END: SQUARE_SCRIPTS-->
+                                    <!--END: SQUARE-->
+									<!--START: PAYPALADV-->
+									<div class="ppAdv dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input type="hidden" id="hdnPayPalAdvID" name="hdnPayPalAdvID" value="online-[id]" />
+												<input onclick="javascript: checkoutSwitch(true); controlDivPayment('[id]'); doCheckout(document.billing);" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+                                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                            <div id="divPayPalAdv" style="display:none;">
+                                                <div style="text-align:left;">
+                                                    <iframe id="iframePayPalAdv" name="iframePayPalAdv" src="assets/images/spacer.gif" width="490" height="565" frameborder="0" scrolling="no"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+										
+									</div>
+									<!--END: PAYPALADV-->
+
+                                    <!--START: FUTUREPAY-->
+                                    <div class="fpay dpm-provider">
+                                        <h4>
+                                            <label for="online-[id]">
+                                                <span class="fpay-radio pull-left">
+                                                    <input name="payment" onclick="javascript: checkoutSwitch(false); doCheckout(document.billing);controlDivPayment('[id]')" type="radio" value="online-[id]" />
+                                                    <input type="hidden" id="hdnFuturePayID" name="hdnFuturePayID" value="online-[id]" />
+                                                    <input type="hidden" id="hdnFuturePayRef" name="hdnFuturePayRef" value="" />
+                                                </span>
+                                                <span class="fpay-logo pull-left">
+                                                    <img src="assets/images/default/fp-logo.png" class="img-responsive" alt="FuturePay" />
+                                                    <span class="fpay-logo-text">
+                                                        [payment_description]
+                                                        (<a id="futurepay-banner" data-promo="buy-now-and-pay-later" data-style="simple-banner">                                                            
+                                                            <span id="fp-modal-trigger">Learn more</span>
+                                                            <script src="https://portal.futurepay.com/media/productPage/futurepay-banner.js"></script>
+                                                        </a>)
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </h4>
+                                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                            <div id="futurepay_form" style="display:block;"></div>
+                                        </div>                                        
+                                    </div>
+                                    <!--END: FUTUREPAY-->
+
+                                    <!--START: BREADCHECKOUT-->
+                                    <script>
+                                        //////////////////////////////////////////////////////////////////////////////////////////////////
+                                        //Customize the Bread Checkout Experience
+                                        //////////////////////////////////////////////////////////////////////////////////////////////////
+                                        // Reference
+                                        // https://docs.getbread.com/docs/integration/shopify/customize-experience/#style-the-bread-button
+                                        // https://docs.getbread.com/docs/manual-integration/button-styling/#button-structure
+                                        //
+                                        // leave this variable blank in order to use default Bread Checkout Styles
+                                           var BreadCheckoutCustomStyleCSS = ''; 
+                                        //
+                                        // or to use a custom CSS - All CSS values contained in quotes should use double quotes - example:
+                                        // var BreadCheckoutCustomStyleCSS = '@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);#bread-button,body,html{height:100%;margin:0;width:100%}body{display:table}#bread-button{background:#EEE;color:#181818;display:table-cell;font-family:"Open Sans",sans-serif;font-size:16px;text-align:center;vertical-align:middle}.bread-text{cursor:pointer;text-decoration:underline;transition:all .2s ease}.bread-text:hover{color:#197797}.bread-dur{text-transform:lowercase;word-spacing:-3px;margin-left:-3px}.bread-embed-inner,.bread-label .bread-embed-icon{display:inline-block}.bread-btn .bread-as-low-as:before,.bread-label .bread-as-low-as:before{content:"As low as "}.bread-btn .bread-for:before{content:"For "}';
+                                        ///////////////////////////////////////////////////////////////////////////////////////////////////
+                                    </script>
+                                    <div class="breadcheckout dpm-provider">
+                                        <h4>
+                                            <label for="online-[id]">
+                                                <input name="payment" onclick="javascript: checkoutSwitch(false);" type="radio" id="online-[id]" value="online-[id]" />
+                                                [payment_description]
+                                            </label>
+                                        </h4>
+                                        <div class="clear"></div>
+                                        <div id="bread-checkout-btn" data-bread-default-size="true"></div>
+                                    </div>
+                                    [BREADCHECKOUT_SCRIPTS_BLOCK]
+                                    <!--END: BREADCHECKOUT-->
+
+                                    <!--START: FATTMERCHANT-->
+                                    <script>
+                                        var FattMerchant_CCNumber_Style = {
+                                            id: 'fattjs-number',
+                                            placeholder: 'Credit Card Number',
+                                            style: 'width: 97%;  border-radius: 3px; border: 1px solid #ccc; padding: .5em .5em; font-size: 96%;background-color: white;'
+                                        }
+
+                                        var FattMerchant_CVV2_Style = {
+                                            id: 'fattjs-cvv',
+                                            placeholder: 'CVV2',
+                                            style: 'width: 40px; border: 1px solid #ccc; padding: .5em .5em; font-size: 96%;background-color: white;font-family:Raleway, sans-serif;'
+                                            }
+                                    </script>
+                                    <div class="fattmerchant dpm-provider">
+                                        <h4>
+                                            <label for="online-[id]">
+                                                <input onclick="javascript: checkoutSwitch(false); controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                                [payment_description]
+                                            </label>
+                                        </h4>
+                                        <div class="clear"></div>
+
+
+                                        <div id="divPaymentOption[id]" class="wepaydiv" name="divPaymentOption" style="display:none;">
+                                            <div class="row cc-details">
+                                                <div class="ccgField col-sm-12">
+                                                    <label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
+                                                    <div id="fattjs-number" style="height:35px;"></div>
+                                                </div>
+
+                                                <div class="ccgField col-sm-6">
+                                                    <label for="creditexpiration">[CustomerInfo_creditexpiration]</label>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <select id="ff[id]_ocardexpiresmonth" name="ff[id]_ocardexpiresmonth"  class="txtBoxStyle form-control">
+                                                                [monthlist]
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-xs-6">
+                                                            
+                                                            <select id="ff[id]_ocardexpiresyear" name="ff[id]_ocardexpiresyear" class="txtBoxStyle form-control">
+                                                                [yearlist]
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ccgField col-sm-3 form-group has-feedback">
+                                                    <label for="cvv2">CVV2</label><a href="#" id="cvv-pop" data-toggle="modal" data-target="#cvv_modal">
+                                                        <i class="icon-help-circled"></i>
+                                                    </a>
+                                                    <div id="fattjs-cvv" style="height:35px;"></div>
+                                                    
+                                                </div>
+												<!--START: SaveMyCC2-->
+												<div class="ccgField col-sm-12">
+													<input type="checkbox" id="ff[id]_savecc" name="ff[id]_savecc" value="1" />
+                                                    <label for="ff[id]_savecc">[checkout3_savecc]</label>
+													<input type="hidden" name="ff[id]_saveccenabled" value="1" />
+													<div class="clear"></div>
+												</div>
+												<!--END: SaveMyCC2-->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END: FATTMERCHANT-->
+
+                                    <!--START: STRIPE-->
+                                    <div class="stripe dpm-provider">
+                                        <h4>
+                                            <label for="online-[id]" id="strip-radio">
+                                                <input name="payment" onclick="javascript: checkoutSwitch(false);" type="radio" id="online-[id]" value="online-[id]" />
+                                                    [payment_description]
+                                            </label>
+                                        </h4>
+                                        <div id="divStripeJS" name="divStripeJS" style="margin:0 0 0 10px;display:none;">
+                                            <div id="card-element"></div>
+                                            <div id="card-errors" role="alert"></div>
+                                            <!--START: SaveMyCC2-->
+                                            <div class="ccgField" style="margin:10px 0 12px 0">
+                                                <input type="checkbox" name="ff[id]_savecc" value="1" />
+                                                <label for="creditcardnumber">[checkout3_savecc]</label>
+                                                <input type="hidden" name="ff[id]_saveccenabled" value="1" />
+                                                <div class="clear"></div>
+                                            </div>
+                                            <!--END: SaveMyCC2-->
+                                        </div>
+                                        <script>
+                                        // Custom styling can be passed to options when creating an Element.
+                                        var StripeJS_style = {
+                                            base: {
+                                                fontSize: '14px',
+                                                color: "#32325d",
+                                                lineHeight: '2.429'
+                                            }
+                                        };
+                                        </script>
+                                        <script>
+                                            jQuery(function () {
+                                                jQuery('#strip-radio').on('click', function () {
+                                                    jQuery('#divStripeJS').show();
+                                                });
+                                            });
+                                        </script>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <!--END: STRIPE-->
+
+									<!--START: WEPAY-->
+                                    <script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js"></script>
+                                    <div class="wpay dpm-provider">
+                                        <h4>
+                                            <label for="online-[id]" class="wpay-radio">
+                                                <input name="payment" onclick="javascript: checkoutSwitch(false); controlDivPayment('[id]');" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED]>
+                                                [payment_description]
+                                                <input type="hidden" id="hdnWePayID" name="hdnWePayID" value="online-[id]" />
+                                                <input type="hidden" id="hdnWePayClientID" name="hdnWePayClientID" value="[hdnWePayClientID]" />
+                                                <input type="hidden" id="hdnWePayRef" name="hdnWePayRef" value="" />
+                                                <input type="hidden" id="hdnWePayGenericErrorMsg" name="hdnWePayGenericErrorMsg" value="[hdnWePayGenericErrorMsg]" />
+                                            </label>
+                                        </h4>
+                                        <div id="divPaymentOption[id]" class="wepaydiv" name="divPaymentOption" style="display:none;">
+                                            <div class="row cc-details">
+                                                <div class="col-sm-12">
+                                                    <div class="wpay-logo"><img src="assets/templates/common/images/wepay-logo.png"></div>
+                                                    <div class="desc-message">[payment_description_message]</div>
+                                                </div>
+
+                                                <div class="ccgField col-sm-12">
+                                                    <label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
+                                                    <input type="text" onchange="clearContent(this);" id="wepay_ocardno" name="wepay_ocardno" size="30" class="txtBoxStyle form-control">
+                                                </div>
+
+                                                <div class="ccgField col-sm-6">
+                                                    <label for="creditexpiration">[CustomerInfo_creditexpiration]</label>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <select id="wepay_ocardexpiresmonth" name="wepay_ocardexpiresmonth"  class="txtBoxStyle form-control">
+                                                                [monthlist]
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-xs-6">
+                                                            
+                                                            <select id="wepay_ocardexpiresyear" name="wepay_ocardexpiresyear" class="txtBoxStyle form-control">
+                                                                <option value=""></option>
+                                                                [yearlist]
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ccgField col-sm-3 form-group has-feedback">
+                                                    <label for="cvv2">CVV2</label>
+                                                    <input type="text" id="wepay_ocardcvv2" name="wepay_ocardcvv2" size="3" class="txtBoxStyle form-control">
+                                                    <a href="#" id="cvv-pop" data-toggle="modal" data-target="#cvv_modal" class="cvv2-help form-control-feedback">
+                                                        <i class="icon-help-circled"></i>
+                                                    </a>
+                                                </div>
+
+                                                <!--START: SaveMyCC1-->
+                                                <div class="ccgField col-sm-12">
+                                                    <input type="checkbox" id="ff[id]_savecc" name="ff[id]_savecc" value="1" />
+                                                    <label for="ff[id]_savecc">[checkout3_savecc]</label>
+                                                    <input type="hidden" name="ff[id]_saveccenabled" value="1" />
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <!--END: SaveMyCC1-->
+                                                <!--START: SaveMyCCRec1-->
+                                                <div class="ccgField col-sm-12">
+                                                    <label>[checkout3_saveccrecurring]</label>
+                                                </div>
+                                                <!--END: SaveMyCCRec1-->
+                                            </div>
+                                        </div>
+                                    </div>
+									<!--END: WEPAY-->
+
+									<!--START: PAYMETRIC-->
+									<div class="ccGateway dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] id="paymetric-[id]">
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<table width="100%" cellpadding="0" cellspacing="3">
+												<tr>
+													<td colspan="2" class="item">[payment_description_message]</td>
+												</tr>
+												<tr>
+													<td colspan="2" class="item">
+														<style>
+															.PaymentPage_PayNowButton {
+																display: none;
+															}
+
+															.DataIntercept {
+																font-weight: bold;
+															}
+
+																.DataIntercept td {
+																	padding: 2px;
+																}
+
+															.DataInterceptCreditCardType:nth-child(1), .DataInterceptCreditCardNumber:nth-child(1), .DataInterceptExpirationDate:nth-child(1), .DataInterceptCVV:nth-child(1) {
+																text-align: right;
+															}
+														</style>
+														<div id="divPaymetricContainer">
+															<script src="[paymetric_url]" type="text/javascript"></script>
+														</div>
+													</td>
+												</tr>
+											</table>
+											<input name="Paymetric_HFSignedData" id="HFSignedData" type="hidden" value="[paymetric_signature]" />
+											<script type="text/javascript">
+												UpdatePaymentPageContent(document.getElementById('HFSignedData').value);
+											</script>
+											<div class="clear"></div>
+										</div>
+									</div>
+									<!--END: PAYMETRIC-->
+
+									<!--START: AFFIRM-->
+                                    <div class="dpm-provider affirm">
+                                        <h4>
+                                            <label class="affirm-radio">
+                                                <input name="payment" onclick="javascript: checkoutSwitch(false); " type="radio" value="online-[id]" />
+                                                <input type="hidden" id="hdnAffirmID" name="hdnAffirmID" value="online-[id]" />
+                                                [payment_description]
+                                            </label>
+                                        </h4>
+                                        <div id="divPaymentOption[id]" name="divPaymentOption">
+                                            <div class="affirm-logo">
+                                                <img src="https://cdn-assets.affirm.com/images/blue_logo-transparent_bg.png" style="max-width: 80px;margin: 0 0 10px;" class="img-responsive" />
+                                                <p>[payment_description_message]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+									<!--END: AFFIRM-->
+
+									<!--START: TRANSFLOW-->
+									<div class="transFlow dpm-provider">
+										<h4>
+											<label for="transflow-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="transflow-[id]" name="payment" type="radio" value="transflow-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<p class="desc-message">[payment_description_message]</p>
+											<label>Your Mobile Number</label>
+											<input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="20" class="txtBoxStyle form-control" />
+										</div>
+									</div>
+									<!--END: TRANSFLOW-->
+									<!--START: SHOPATRON-->
+									<div class="shopaTron dpm-provider wallet-method">
+										<h4>[payment_description]</h4>
+                                        <div name="divPaymentOption">
+                                            <p class="desc-message">[payment_description_message]</p>
+                                            <div class="st-button">
+                                                <input name="payment" onclick="window.location.href='shopatron.asp';" type="button" class="btn btn-default" value="Checkout with Shopatron" />
+                                            </div>
+                                        </div>
+									</div>
+									<!--END: SHOPATRON-->
+
+									<!--START: KLARNA-->
+									<script src="https://cdn.klarna.com/public/kitt/toc/v1.0/js/klarna.terms.min.js" type="text/javascript" charset="utf-8"></script>
+									<input type="hidden" name="klarna_method" id="klarna_method" value="[klarna_default_method]" />
+									<script type="text/javascript">
+										function setKlarnaMethod(strMethod) {
+											document.getElementById("klarna_method").value = strMethod;
+										}
+									</script>
+									<!--START: KLARNA_INVOICE-->
+									<div class="klarnaInvoice dpm-provider">
+                                        <h4>
+                                            <label class="klarna-invoice-radio">
+                                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]invoice');setKlarnaMethod('INVOICE');" name="payment" type="radio" value="online-[id]-klarna" [FIRSTOPTIONINVOICECHECKED] />
+                                                <span class="klarna-invoice-logo"><img src="[klarna_invoice_logo]?eid=[klarna_storeid]&width=80" alt="Klarna Invoice Logo" /> <span>pay within 14 days</span></span>
+                                            </label>
+                                        </h4>
+                                        <div id="divPaymentOption[id]invoice" name="divPaymentOption" style="display:none;">
+                                            <p class="klarna-invoice-details">In order to finalize your purchase, please provide the following additional details:</p>
+                                            <!--START: KLARNA_INVOICE_GD-->
+                                            <div class="chkField klarnaField">
+                                                <div><label class="label">Gender:</label></div>
+                                                <input type="radio" value="1" name="klarna_invoice_gender[id]" id="klarna_male" />
+                                                <span for="klarna_male">Male</span>
+                                                &nbsp;&nbsp;
+                                                <input type="radio" value="0" name="klarna_invoice_gender[id]" id="klarna_female" />
+                                                <span for="klarna_female">Female</span>
+                                            </div>
+                                            <!--END: KLARNA_INVOICE_GD-->
+                                            <!--START: KLARNA_INVOICE_SSN-->
+                                            <div class="chkField klarnaField">
+                                                <div><label class="label">Personal Number:</label></div>
+                                                <input type="text" name="klarna_invoice_ssn[id]" value="" size="10" maxlength="14" class="txtBoxStyle form-control" />
+                                                <div>([klarna_po_format])</div>
+                                            </div>
+                                            <!--END: KLARNA_INVOICE_SSN-->
+
+                                            <!--START: KLARNA_INVOICE_BD-->
+                                            <div class="row">
+                                                <div  class="col-md-12 chkField"><label class="label">Birth Date:</label></div>
+                                                <div class="col-md-4 chkField klarnaField">
+                                                    <select name="klarna_invoice_birthdate_day[id]" class="txtBoxStyle form-control">
+                                                        <option value="">day</option>
+                                                        [klarna_birthdate_day]
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 chkField klarnaField">
+                                                    <select name="klarna_invoice_birthdate_month[id]" class="txtBoxStyle form-control">
+                                                        <option value="">month</option>
+                                                        [klarna_birthdate_month]
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 chkField klarnaField">
+                                                    <select name="klarna_invoice_birthdate_year[id]" class="txtBoxStyle form-control">
+                                                        <option value="">year</option>
+                                                        [klarna_birthdate_year]
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--END: KLARNA_INVOICE_BD-->
+                                            
+                                            <div id="klarna_invoiceterms"></div>
+                                            <script type="text/javascript">
+                                                var klarnaterms = new Klarna.Terms.Invoice({
+                                                    el: 'klarna_invoiceterms',
+                                                    eid: [klarna_storeid],
+                                                    country: '[klarna_country]',
+                                                    charge: 0
+                                                })
+                                            </script>
+                                            <!--START: KLARNA_INVOICE_DE_BLOCK-->
+                                            <div id="afm_banner">
+                                                <input type="checkbox" name="klarna_afm_de_invoice" value="1" />
+                                                Mit der ?bermittlung der f?r die Abwicklung der gew?hlten Klarna Zahlungsmethode und einer Identit?ts- und
+                                                Bonit?tspr?fung erforderlichen Daten an Klarna bin ich einverstanden. Meine <a href="https://online.klarna.com/consent_de.yaws" target="_blank">Einwilligung</a> kann ich jederzeit mit Wirkung f?r die Zukunft widerrufen.
+                                                Es gelten die AGB des H?ndlers.
+                                            </div>
+                                            <!--END: KLARNA_INVOICE_DE_BLOCK-->
+                                        </div>
+									</div>
+									<!--END: KLARNA_INVOICE-->
+
+
+									<!--START: KLARNA_ACCOUNT-->
+									<div class="klarnaAccount dpm-provider">
+                                        <h4>
+                                            <label class="klarna-invoice-radio">
+                                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]account');setKlarnaMethod('ACCOUNT');" name="payment" type="radio" value="online-[id]-klarna" [FIRSTOPTIONACCOUNTCHECKED] />
+                                                <span class="klarna-invoice-logo"><img src="[klarna_account_logo]?eid=[klarna_storeid]&width=80" alt="Klarna Account Logo" /> <span>part pay from [klarna_monthly_cost] / month</span></span>
+                                            </label>
+                                        </h4>
+                                        <div id="divPaymentOption[id]account" name="divPaymentOption" style="display:none;">
+                                            <p class="klarna-account-details">In order to finalize your purchase, please provide the following additional details:</p>
+
+                                            <!--START: KLARNA_ACCOUNT_GD-->
+                                            <div class="chkField klarnaField">
+                                                <div><label class="label">Gender:</label></div>
+                                                <input type="radio" value="1" name="klarna_account_gender[id]" id="klarna_male" />
+                                                <span for="klarna_male">Male</span>
+                                                &nbsp;&nbsp;
+                                                <input type="radio" value="0" name="klarna_account_gender[id]" id="klarna_female" />
+                                                <span for="klarna_female">Female</span>
+                                            </div>
+                                            <!--END: KLARNA_ACCOUNT_GD-->
+
+                                            <!--START: KLARNA_ACCOUNT_SSN-->
+                                            <div class="chkField klarnaField">
+                                                <div><label class="label">Personal Number:</label></div>
+                                                <input type="text" name="klarna_account_ssn[id]" value="" size="10" maxlength="14" class="txtBoxStyle form-control" />
+                                                <div>([klarna_po_format])</div>
+                                            </div>
+                                            <!--END: KLARNA_ACCOUNT_SSN-->
+
+                                            <!--START: KLARNA_ACCOUNT_BD-->
+                                            <div class="row">
+                                                <div class="col-md-12 chkField"><label class="label">Birth Date:</label></div>
+                                                <div class="col-md-4 chkField klarnaField">
+                                                    <select name="klarna_account_birthdate_day[id]" class="txtBoxStyle form-control">
+                                                        <option value="">day</option>
+                                                        [klarna_birthdate_day]
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 chkField klarnaField">
+                                                    <select name="klarna_account_birthdate_month[id]" class="txtBoxStyle form-control">
+                                                        <option value="">month</option>
+                                                        [klarna_birthdate_month]
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 chkField klarnaField">
+                                                    <select name="klarna_account_birthdate_year[id]" class="txtBoxStyle form-control">
+                                                        <option value="">year</option>
+                                                        [klarna_birthdate_year]
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--END: KLARNA_ACCOUNT_BD-->
+
+                                            <div id="klarna_accountterms"></div>
+                                            <script type="text/javascript">
+                                                var klarnaterms2 = new Klarna.Terms.Account({
+                                                    el: 'klarna_accountterms',
+                                                    eid: [klarna_storeid],
+                                                    country: '[klarna_country]',
+                                                    charge: 0
+                                                })
+                                            </script>
+                                            <!--START: KLARNA_ACCOUNT_DE_BLOCK-->
+                                            <div id="afm_banner">
+                                                <input type="checkbox" name="klarna_afm_de_account" value="1" />
+                                                Mit der ?bermittlung der f?r die Abwicklung der gew?hlten Klarna Zahlungsmethode und einer Identit?ts- und
+                                                Bonit?tspr?fung erforderlichen Daten an Klarna bin ich einverstanden. Meine <a href="https://online.klarna.com/consent_de.yaws" target="_blank">Einwilligung</a> kann ich jederzeit mit Wirkung f?r die Zukunft widerrufen.
+                                                Es gelten die AGB des H?ndlers.
+                                            </div>
+                                            <!--END: KLARNA_ACCOUNT_DE_BLOCK-->
+                                            <!--START: KLARNA_ACCOUNT_NL_BLOCK-->
+                                            <div id="afm_banner"> <img src="assets/templates/common/images/balk_afm3-jpg.jpg" width="320" /> </div>
+                                            <!--END: KLARNA_ACCOUNT_NL_BLOCK-->
+                                            <div class="clear"></div>
+                                        </div>
+										<div class="clear"></div>
+									</div>
+									<!--END: KLARNA_ACCOUNT-->
+									<!--END: KLARNA-->
+
+									<!--START: CCGATEWAY-->
+									<div class="ccGateway dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none">
+											<!--START: worldPayGatewayBlock-->
+											<input type="hidden" id="hdnWorldPayID" name="hdnWorldPayID" value="online-[id]" />
+											<input type="hidden" id="hdnWorldPayToken" name="hdnWorldPayToken" value="" />
+											<input type="hidden" id="hdnWorldPayCustomerID" name="hdnWorldPayCustomerID" value="" />
+											<input type="hidden" id="hdnWorldPayPublicKey" name="hdnWorldPayPublicKey" value="[WorldPayPublicKey]" />
+											<input type="hidden" id="hdnWorldPayError201" name="hdnWorldPayError201" value="[worldpayerror201]" />
+											<script type="text/javascript" src="https://gwapi[test_mode].securenet.com/v1/PayOS.js"></script>
+											<!--END: worldPayGatewayBlock-->
+											<div class="desc-message">[payment_description_message]</div>
+											<div class="row cc-details">
+												<div class="ccgField col-sm-12">
+													<label for="cardtype">[CustomerInfo_cardtype]</label>
+													<select name="ff[id]_ocardtype" class="txtBoxStyle form-control">
+														[cctype]
+													</select>
+													<span class="error-img required">*</span>
+													<div class="clear"></div>
+												</div>
+
+												<div class="ccgField col-sm-12">
+													<label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
+													<input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" placeholder="[CustomerInfo_creditcardnumber]" />
+													<span class="error-img required">*</span>
+													<div class="clear"></div>
+												</div>
+
+												<!--START: ccStartDate-->
+												<div class="ccgField col-sm-6">
+													<label for="creditstartdate">[CustomerInfo_creditstartdate]</label>
+													<div class="row">
+														<div class="col-xs-6">
+															<select name="ff[id]_ocardstartmonth" class="txtBoxStyle form-control">
+																<option value=""></option>
+																[monthlist]
+															</select>
+														</div>
+														<div class="col-xs-6">
+															<select name="ff[id]_ocardstartyear" class="txtBoxStyle form-control">
+																<option value=""></option>
+																[yearlistdtstart]
+															</select>
+														</div>
+													</div>
+													<span class="error-img required">(Maestro, Solo and Amex only) *</span>
+													<div class="clear"></div>
+												</div>
+												<!--END: ccStartDate-->
+
+												<div class="ccgField col-sm-6">
+													<label for="creditexpiration">[CustomerInfo_creditexpiration]</label>
+
+													<div class="row">
+														<div class="col-xs-6">
+															<select name="ff[id]_ocardexpiresmonth" class="txtBoxStyle form-control">
+																[monthlist]
+															</select>
+														</div>
+														<div class="col-xs-6">
+															<select name="ff[id]_ocardexpiresyear" class="txtBoxStyle form-control">
+																[yearlist]
+															</select>
+														</div>
+													</div>
+													<span class="error-img required">*</span>
+													<div class="clear"></div>
+												</div>
+
+												<!--START: ccIssueNumber-->
+												<div class="ccgField col-sm-12">
+													<label for="creditissuenumber">[CustomerInfo_creditissuenumber]</label>
+													<input type="text" name="ff[id]_ocardissue" maxlength="10" size="3" class="txtBoxStyle form-control" placeholder="[CustomerInfo_creditissuenumber]" />
+													(Maestro and Solo only) <span class="error-img required">*</span>
+													<div class="clear"></div>
+												</div>
+												<!--END: ccIssueNumber-->
+
+												<div class="ccgField col-sm-3 form-group has-feedback">
+													<label for="cvv2">CVV2</label>
+													<input type="text" name="ff[id]_ocardcvv2" size="3" class="txtBoxStyle form-control" placeholder="CVV2" />
+													<!--START: cvvrequired--><input type="hidden" name="hdnCvvRequired" id="hdnCvvRequired" value="1" />
+													<span class="error-img required">*</span><!--END: cvvrequired-->
+													<a href="#" id="cvv-pop" data-toggle="modal" data-target="#cvv_modal" class="cvv2-help form-control-feedback">
+                                                        <i class="icon-help-circled"></i>
+                                                    </a>
+													<div class="clear"></div>
+												</div>
+												<div class="clear"></div>
+
+												<!--START: SaveMyCC2-->
+												<div class="ccgField col-sm-12">
+													<input type="checkbox" id="ff[id]_savecc" name="ff[id]_savecc" value="1" />
+                                                    <label for="ff[id]_savecc">[checkout3_savecc]</label>
+													<input type="hidden" name="ff[id]_saveccenabled" value="1" />
+													<div class="clear"></div>
+												</div>
+												<!--END: SaveMyCC2-->
+
+												<!--START: SaveMyCCRec2-->
+												<div class="ccgField col-sm-12">
+													<label>[checkout3_saveccrecurring]</label>
+													<div class="clear"></div>
+												</div>
+												<!--END: SaveMyCCRec2-->
+												<div class="clear"></div>
+
+											</div>
+										</div>
+									</div>
+									<!--END: CCGATEWAY-->
+
+									<!--START: AUTHNETCIMBLOCK-->
+									<div class="authneticIMBlock dpm-provider">
+										<h4>
+											<label for="online-CIM">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('CIM');" id="online-CIM" name="payment" type="radio" value="online-CIM" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOptionCIM" name="divPaymentOptionCIM" style="display:none;">
+											<!--START: authCIMBlock-->
+											<div class="cimField">
+												<label for="use-creditcard-on-file">[checkout3_use-creditcard-on-file]</label>
+												<select name="authCIMProfileID" id="authCIMProfileID" class="txtBoxStyle form-control">
+													<!--START: authCIMPaymentProfileItem-->
+													<!--START: authCIMPaymentProfileItemCC-->
+													<option value="authCIMProfileID_[custProfId]_[custPmntProfId]_[authCIMProfileID_cardlastdigits]_[authCIMProfileID_cardexp]_[authCIMOnlinePmtId]"> [CIMGateWay][checkout3_creditcard-last-digits]: [authCIMProfileID_cardlastdigits] / [CustomerInfo_creditexpiration]: [authCIMProfileID_cardexp]</option>
+													<!--END: authCIMPaymentProfileItemCC-->
+													<!--START: authCIMPaymentProfileItemECheck-->
+													<option value="authCIMProfileID_[custProfId]_[custPmntProfId]_[authCIMProfileID_cardlastdigits]_[authCIMProfileID_cardexp]_[authCIMOnlinePmtId]"> [CIMGateWay][checkout3_bankaccountonfile]: [authCIMProfileID_cardlastdigits]</option>
+													<!--END: authCIMPaymentProfileItemECheck-->
+													<!--END: authCIMPaymentProfileItem-->
+												</select>
+												<div class="clear"></div>
+											</div>
+											<!--END: authCIMBlock-->
+										</div>
+									</div>
+									<!--END: AUTHNETCIMBLOCK-->
+
+									<!--START: MILITARYSTAR-->
+									<div class="militaryStar dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input type="hidden" value="1" name="ff[id]_isstarcard" id="ff[id]_isstarcard" />
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<div class="desc-message">[payment_description_message]</div>
+											<div class="msField">
+												<label for="ff[id]_ocardno">[CustomerInfo_creditcardnumber]</label>
+												<input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle" />
+												<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+												<div class="clear"></div>
+											</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<!--END: MILITARYSTAR-->
+
+									<!--START: GEMONEY-->
+									<div class="geMoney dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input type="hidden" value="1" name="ff[id]_isstarcard" />
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<div class="desc-message">[payment_description_message]</div>
+											<div class="gmField">
+												<label for="ff[id]_ocardno">[CustomerInfo_creditcardnumber]</label>
+												<input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle" />
+												<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+												<input type="hidden" name="ff[id]_ocardexpiresmonth" value="12" />
+												<input type="hidden" name="ff[id]_ocardexpiresyear" value="49" />
+												<div class="clear"></div>
+											</div>
+											<div class="clear"></div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<!--END: GEMONEY-->
+
+									<!--START: CHECKGATEWAY-->
+									<div class="chkGateway dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<div class="desc-message">[payment_description_message]</div>
+											<!--START: CheckType-->
+											<div class="chkField">
+												<label for="ff[id]_ochecktype">[CustomerInfo_check-type]</label>
+												<select name="ff[id]_ochecktype" class="txtBoxStyle">
+													[checktypelist]
+												</select>
+												<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+												<div class="clear"></div>
+											</div>
+											<!--END: CheckType-->
+											<div class="chkField">
+												<label for="ff[id]_ocheckaccttype">[CustomerInfo_check-acct-type]</label>
+												<select name="ff[id]_ocheckaccttype" class="txtBoxStyle">
+													[checkaccttypelist]
+												</select>
+												<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+												<div class="clear"></div>
+											</div>
+											<div class="chkField">
+												<label for="ff[id]_ocheckrouting">[CustomerInfo_check-routing]</label>
+												<input type="text" name="ff[id]_ocheckrouting" maxlength="9" size="10" class="txtBoxStyle" />
+												<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+												<div class="clear"></div>
+											</div>
+											<div class="chkField">
+												<label for="ff[id]_ocheckaccount">[CustomerInfo_check-acct]</label>
+												<input type="text" name="ff[id]_ocheckaccount" maxlength="30" size="10" class="txtBoxStyle" />
+												<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+												<div class="clear"></div>
+											</div>
+											<!--START: SaveMyeCheck-->
+											<div class="chkField">
+												<label for="ff[id]_savecc">[CustomerInfo_check-save-account-token]</label>
+												<input type="checkbox" name="ff[id]_savecc" id="ff[id]_savecc" value="1" />
+												<input type="hidden" name="ff[id]_saveccenabled" value="1" />
+												<div class="clear"></div>
+											</div>
+											<!--END: SaveMyeCheck-->
+											<!--START: SaveMyCCRec3-->
+											<div>
+												<label>[checkout3_saveccrecurring]</label>
+												<div class="clear"></div>
+											</div>
+											<!--END: SaveMyCCRec3-->
+										</div>
+									</div>
+									<!--END: CHECKGATEWAY-->
+
+									<!--START: LINKGATEWAY-->
+									<div class="linkGateway dpm-provider" id="divLinkGatewayMainContainer[id]">
+										<h4>
+											<label for="online-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clearfix"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<div class="desc-message">[payment_description_message]</div>
+											<div class="payment-desc">Pay [payment_description]</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<!--END: LINKGATEWAY-->
+
+									<!--START: ELAYAWAYGATEWAY-->
+									<div class="elayawayGateway dpm-provider">
+										<h4>
+											<label for="online-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_description]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+											<div class="desc-message">[payment_description_message]</div>
+											<div class="divElayaway">
+												<a name="eLayAway"></a> <a onclick="eLayaway.button_click({amount:'[lay_order_total]',
+							merchant_name:'[company_name]',
+							max_lay_length: [max_lay_length],
+							eci_form: 'eci_form',
+							months_field: 'months',
+							payment_frequency_field: 'payment_frequency',
+							currency_code:'[currency_code]'}, event);" href="javascript:void(0);">Select Term</a>
+												<div name="divElayawayInfo" id="divElayawayInfo"></div>
+											</div>
+											<div class="clear"></div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<!--END: ELAYAWAYGATEWAY-->
+
+									<!--START: CUSTOM-->
+									<div class="customGateway dpm-provider">
+										<h4>
+											<label for="offline-[id]">
+												<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]-custom');" id="offline-[id]" name="payment" type="radio" value="offline-[id]" [FIRSTOPTIONCHECKED] />
+												[payment_type]
+											</label>
+										</h4>
+										<div class="clear"></div>
+										<div id="divPaymentOption[id]-custom" name="divPaymentOption" style="display:none;">
+											<div class="payment-desc">[payment_description]</div>
+											<div class="payment-type">[payment_type]</div>
+											<!--START: CUSTOM_FIELD-->
+											<div class="custField">
+												<div class="cust-input">[InputName]</div>
+												<div class="cust-field">[field]</div>
+												<div class="clear"></div>
+											</div>
+											<!--END: CUSTOM_FIELD-->
+											<div class="clear"></div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<!--END: CUSTOM-->
+
+                                    <!--START: VME_NOTSELECTED-->
+                                    <div id="divVmeNotSelected" class="dpm-provider vmeSelected wallet-method">
+                                        <h4>[payment_description]</h4>
+                                        <div name="divPaymentOption">
+                                            <!--START: vMeByVisa-->
+                                            [vMeByVisaButton]
+                                            <script type="text/javascript">
+                                                if (typeof jQuery == 'undefined')
+                                                    document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
+
+                                                function myCallbackFunctionForVmeEvents(VmeEventType, eventData) {
+                                                    if (VmeEventType == "purchase.success") {
+                                                        var url = "vmebyvisa.asp?r=purchase.success&s=checkout&no-cache=" + Math.random();
+                                                        var params = "mt=" + eventData.merchTrans;
+                                                        params = params + "&ci=" + eventData.callId;
+                                                        params = params + "&tp=" + eventData.type;
+                                                        params = params + "&st=" + eventData.state;
+                                                        params = params + "&sg=" + eventData.signature;
+                                                        params = params + "&pi=" + eventData.productId;
+                                                        if (eventData.subTotal) {
+                                                            params = params + "&sta=" + eventData.subTotal.amount;
+                                                            params = params + "&stc=" + eventData.subTotal.currency;
+                                                        }
+                                                        if (eventData.total) {
+                                                            params = params + "&tta=" + eventData.total.amount;
+                                                            params = params + "&ttc=" + eventData.total.currency;
+                                                        }
+
+                                                        jQuery.ajax({
+                                                            url: url,
+                                                            dataType: 'html',
+                                                            type: 'POST',
+                                                            data: params,
+                                                            cache: false,
+                                                            success: function (strResult) {
+                                                                var arrResult = strResult.split("|");
+                                                                if (arrResult.length < 2) {
+                                                                    alert("Error processing v.me request. Please, try again." + strResult);
+                                                                }
+                                                                else {
+                                                                    //doPayment();
+                                                                    //document.getElementById("divVmeNotSelected").style.display='none';
+                                                                    document.location.href = "checkout_one.asp";
+                                                                }
+                                                            },
+                                                            error: reportError
+                                                        });
+                                                    }
+                                                }
+
+                                                function reportError(jqXHR, textStatus) {
+                                                    if (jqXHR.status > 0) {
+                                                        alert("Error processing v.me request. Please, try again.");
+                                                        //alert(jqXHR.responseText);
+                                                    }
+                                                }
+                                            </script>
+                                            <!--END: vMeByVisa-->
+                                        </div>
+                                    </div>
+                                    <!--END: VME_NOTSELECTED-->
+								</div>
+								<!--END: PAYMENT_BLOCK-->
+							</div>
+
+							<!--START: checkout_questions-->
+							<div id="divCheckoutQuestions" class="divCheckoutQuestions checkout-section">
+								<div class="header">
+                                    <h3 class="page_heading">[checkout1_checkoutquestions]</h3>
+                                </div>
+								<div class="chkQuestions pad10 boxShadow">
+									<!--START: questions-->[questions]<!--END: questions-->
+								</div>
+
+								<!--START: checkout_questions_templates-->
+								<div class="chkQuestionsTemplates form-horizontal">
+									<!--START: textarea-format-->
+									<div class="chk-questions-section">
+										<div class="textarea-format clearfix">
+											<label for="cq[id]">[question] 
+												<!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+											</label>
+											<textarea cols="30" rows="5" name="cq[id]" class="txtBoxStyle form-control" autocomplete="off">[answer]</textarea>
+										</div>
+									</div>
+									<!--END: textarea-format--> 
+									<!--START: text-format-->
+									<div class="chk-questions-section clearfix">
+										<div class="form-group">
+											<label for="cq[id]">[question] 
+												<!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+											</label>
+											<input type="text" size="30" name="cq[id]" value="[answer]" class="form-control txtBoxStyle" autocomplete="off" />
+										</div>
+
+									</div>
+									<!--END: text-format-->
+									<!--START: dropdown-format--> 
+									<div class="chk-questions-section clearfix">
+										<label for="cq[id]">[question] 
+											<!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+										</label>
+
+										<select name="cq[id]" class="form-control">
+											<!--START: option-->
+											<option value="[option]" [selected]>[option]</option>
+											<!--END: option-->
+										</select>
+									</div>
+									<!--END: dropdown-format-->
+									<!--START: radio-format--> 
+									<div class="chk-questions-section clearfix">
+										<label for="cq[id]">[question] 
+											<!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+										</label>
+
+										<!--START: option-->
+										<label class="radio">
+											<label>
+												<input type="radio" name="cq[id]" value="[option]" class="txtBoxStyle" [selected] />
+												[option]
+											</label>
+										</label>
+										<!--END: option-->
+									</div>
+									<!--END: radio-format--> 
+									 
+									<!--START: checkbox-format--> 
+									<div class="chk-questions-section">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="cq[id]" class="txtBoxStyle" value="[answer]" [selected] />
+												[question] <!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+											</label>
+										</div>
+									</div>
+									<!--END: checkbox-format-->
+
+									<!--START: calendar-format-->
+									<div class="chk-questions-section clearfix">
+										<div class="form-group">
+											<label for="cq[id]">[question] 
+												<!--START: req[id]--><span class="required">*</span><!--END: req[id]-->
+											</label>
+											<input type="text" size="30" name="cq[id]" value="[answer]" class="form-control calendar-format txtBoxStyle" readonly />
+										</div>
+									</div>
+									<!--END: calendar-format-->
+
+								</div>
+								<!--END: checkout_questions_templates-->
+							</div>
+							<!--END: checkout_questions-->
+
+							<div id="divCheckoutComments" class="checkout-section">
+								<div class="header clearfix">
+                                    <h3 class="page_heading">[checkout3_Header-comment]</h3>
+                                </div>
+								<div class="chkComments clearfix">
+									<label for="ocomment">[checkout3_commentmessage]</label>
+									<textarea onchange="clearContent(this);updateOrderComments(this.value);" name="ocomment" class="form-control txtBoxStyle" cols="55" rows="5">[ocomment]</textarea>
+								</div>
+							</div>
+
+							<div id="spanCheckout" class="checkout-section clearfix">
+								<a href="view_cart.asp" class="btn btn-link"><i class="icon-left"></i> Return to Cart</a>
+								<div class="pull-right">
+									<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-lg btn-primary"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
+								</div>
+							</div>
+							<div id="divCheckout" name="divCheckout" class="alert alert-success" style="display:none;">
+								<strong>Processing...</strong>
+							</div>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!--START: CATEGORY_FOOTER-->
+<section class="category-footer" id="checkoutSinglePageFooter">
+    <div class="container">[CONTENT]</div>
+</section>
+<!--END: CATEGORY_FOOTER-->
+
+<!--START: kount-->
+<iframe width="1" height="1" frameborder="0" scrolling="no" src="/logo_k.htm?m=[kount_merchantid]&s=[kount_sessionid]"> <img width="1" height="1" src="/logo_k.gif?m=[kount_merchantid]&s=[kount_sessionid]" alt="" /> </iframe>
+<!--END: kount-->
+
+<div class="modal fade" id="cvv_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Locate my CVV number</h4>
+            </div>
+            <div class="modal-body text-center">
+                <img id="imageresource" src="assets/templates/common/images/cvv2.gif">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="hdnAddrressValidatorResult" id="hdnAddrressValidatorResult" value="" />
+<div id="divAddrressValidator" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<!--START: AddressValidatorBlock-->
+			<div class="modal-body">
+				<!--START: AddressValidatorBlock_ValidationFailed-->
+				<div>[result_msg]</div>
+				<!--END: AddressValidatorBlock_ValidationFailed-->
+				<!--START: AddressValidatorBlock_ValidationSuggestion-->
+				<div> [result_msg] 
+				  <!--START: AddressValidatorBlock_ValidationSuggestion_SingleAddressBlock--> 
+				  <br />
+				  <br />
+				  <strong>[checkout1_AddressValidator_SuggestedAddress]</strong> <a style="text-decoration:underline;" href="#" onclick="javascript:selectAddress('[AddrressValidator_address1]', '[AddrressValidator_address2]', '[AddrressValidator_city]', '[AddrressValidator_state]', '[AddrressValidator_zip]', '[AddrressValidator_addresstype]', '[AddrressValidator_rdi]');">[AddrressValidator_address], [AddrressValidator_city], [AddrressValidator_state], [AddrressValidator_zip]</a> 
+				  <!--END: AddressValidatorBlock_ValidationSuggestion_SingleAddressBlock--> 
+				</div>
+				<!--END: AddressValidatorBlock_ValidationSuggestion--> 
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" onclick="javascript:closeAddressValidatorModal();">[checkout1_AddressValidator_Close]</button>
+				<!--START: AddressValidatorBlock_ValidationSuggestion_ContinueWithEnteredAddress--> 
+				<button type="button" class="btn btn-primary" onclick="javascript:addressValidatorContinue('[AddrressValidator_addresstype]');">[checkout1_AddressValidator_Continue]</button>
+				<!--END: AddressValidatorBlock_ValidationSuggestion_ContinueWithEnteredAddress-->
+			</div>
+			<!--END: AddressValidatorBlock--> 
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="loginModalLabel">Login</h4>
+                <h4 class="modal-title" id="resetPWLabel">Reset Password</h4>
+            </div>
+            <div class="modal-body">
+                <form id="myaccountLogin" name="myaccountLogin" action="login.asp?ordertracking=0" class="bt-flabels js-flabels" method="post">
+                    <div class="loginField bt-flabels__wrapper">
+                        <label for="email">[CustomerInfo_email]</label>
+                        <input type="email" name="email" id="loginEmail" value="" placeholder="[CustomerInfo_email]" size="30" tabindex="1" class="form-control txtBoxStyle" required />
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="loginField bt-flabels__wrapper">
+                        <label for="password">[CustomerInfo_password]</label>
+                        <input type="password" name="password" id="loginPassword" autocomplete="off" placeholder="Password" size="12" tabindex="2" class="form-control txtBoxStyle" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary "><i class="icon-login"></i> [login_button]</button>
+                    <button type="button" class="btn btn-link loginFormToggler"><i class="icon-cw"></i>[login_resetpasswordbutton]</button>
+                </form>
+                <form id="forgotPass" name="forgotPass" action="login.asp?action=forgotpass&ordertracking=[otrack][redirecturl]" method="post" class="bt-flabels js-flabels">
+                    <div class="loginField bt-flabels__wrapper">
+                        <label for="email">[CustomerInfo_email]</label>
+                        <input type="text" name="email" id="ResetEmail" value="" placeholder="" size="30" tabindex="3" class="form-control txtBoxStyle" required />
+                        <div class="clearfix"></div>
+                    </div>
+                    <button type="button" onclick="resetLoginPass();" class="btn btn-primary"><i class="icon-cw"></i>[login_resetpasswordbutton]</button>
+                    <button type="button" class="btn btn-link loginFormToggler"><i class="icon-login"></i>[login_button]</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/giftregistry.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_multi.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout-singlepage.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script>
+<script type="text/javascript" src="state_countryjs.asp"></script>
+<script type="text/javascript" src="assets/templates/common/js/checkoutValidate.js" ></script>
+<script type="text/javascript">
+    jQuery(function () {
+        initpage();
+		if (jQuery('#sameAsBilling').length < 1) {
+			jQuery('#billing_zip').change(function () {
+				check_address('shipping');
+			});
+		}
+	});
+
+	jQuery('#loginEmail').keyup(function () {
+        var loginEmail = $.trim($('#loginEmail').val());
+        jQuery('#ResetEmail').val(loginEmail);
+        var resetEmail = jQuery('#ResetEmail').val();
+        console.log(resetEmail);
+    });
+
+    function resetLoginPass() {
+    	if (jQuery('#ResetEmail').val() != '') {
+		    document.forgotPass.submit();
+	    }
+	    else {
+		    alert('To Reset your password, Please enter your email address and then click "[login_resetpasswordbutton]".');
+	    }
+    }
+    jQuery(function () {
+    	jQuery('.loginFormToggler').click(function () {
+    		jQuery('#loginModal .modal-content').toggleClass('PWreset');
+    		jQuery('#myaccountLogin, #forgotPass').toggle();
+    	});
+    });
+</script>
+<script type="text/javascript">
+    useAddressValidator = "[useAddressValidator]";
+    ccNumerNotAllowedMessage = '[ccNumerNotAllowedMessage]';
+    sfname = "[shipping_firstname]";
+    addLoadEvent(initpage);
+    bolPaypalBRaintreeLoaded = false;
+</script>
+<script type="text/javascript">
+	window.setTimeout('showHideShipping_init()', 100);
+
+	function showHideShipping_init() {
+		var objBody = getElementById_s('shipping_info');
+		if (objBody) {
+			var intWidth = objBody.clientWidth;
+			if (intWidth == 0)
+				window.setTimeout('showHideShipping_init()', 100);
+			else
+				showHideShipping();
+		}
+	}
+
+	initCountry('[billing_country]', '[billing_state_script]', 'billing_state', 'billing_country', '[CustomerInfo_state]');
+	if (get_Element('sameAsBilling') != 'undefined' && get_Element('sameAsBilling') != null)
+		initCountry('[shipping_country]', '[shipping_state_script]', 'shipping_state', 'shipping_country', '[CustomerInfo_state]');
+
+	//Every time that there's no state for a selected country, that script deletes the state control and creates another one.
+	//That's why we need to re-create the validation for the state.
+	var billingStateType = document.billing.billing_state.type;
+	if (get_Element('sameAsBilling') != 'undefined' && get_Element('sameAsBilling') != null)
+		var shippingStateType = document.billing.shipping_state.type;
+
+	function check_stateValidator(type) {
+		if (type == 'billing') {
+			if (document.billing.billing_state.type == 'select-one') //billingStateType)
+			{
+
+				frmvalidator.addValidation("billing_state", "req", "Please enter/select your billing state");
+				frmvalidator.addValidation("billing_state", "maxlen=100");
+				billingStateType = document.billing.billing_state.type;
+			}
+		}
+		else {
+			if (document.billing.shipping_state.type == 'select-one') {
+				frmvalidator.addValidation("shipping_state", "req", "Please enter/select your shipping state");
+				frmvalidator.addValidation("shipping_state", "maxlen=100");
+				shippingStateType = document.billing.shipping_state.type;
+			}
+		}
+	}
+
+	function setValidation() {
+		frmvalidator.clearAllValidations();
+
+		frmvalidator.addValidation("billing_firstname", "req", "Please enter your billing First Name");
+		frmvalidator.addValidation("billing_firstname", "maxlen=100", "Max length for billing First Name is 100");
+
+		frmvalidator.addValidation("billing_lastname", "req", "Please enter your billing Last Name");
+		frmvalidator.addValidation("billing_lastname", "maxlen=100", "Max length for billing Last Name is 100");
+
+		//<!--START: phonerequiredscript_billing-->
+		frmvalidator.addValidation("billing_phone", "maxlen=50", "Max length for billing Phone is 50");
+		if (get_Element('billing_country') != 'undefined' && get_Element('billing_country') != null)
+			if (get_Element('billing_country').value == "US")
+				frmvalidator.addValidation("billing_phone", "phone", "Invalid phone number.");
+		frmvalidator.addValidation("billing_phone", "req", "Please enter your billing phone")
+		//<!--END: phonerequiredscript_billing-->
+
+		frmvalidator.addValidation("billing_address", "maxlen=255");
+		frmvalidator.addValidation("billing_address", "req", "Please enter your billing address");
+
+		frmvalidator.addValidation("billing_city", "maxlen=100");
+		frmvalidator.addValidation("billing_city", "req", "Please enter your billing city");
+
+		if (get_Element('billing_country').value == "US" || get_Element('billing_state').type == 'select-one') {
+			frmvalidator.addValidation("billing_state", "req", "Please enter/select your billing state");
+			frmvalidator.addValidation("billing_state", "maxlen=100");
+		}
+
+		frmvalidator.addValidation("billing_zip", "maxlen=20");
+		frmvalidator.addValidation("billing_zip", "req", "Please enter your billing zip code");
+
+		//<!--START: emailrequiredscript-->
+		frmvalidator.addValidation("billing_email", "maxlen=100", "Max length for Email is 100");
+		frmvalidator.addValidation("billing_email", "req", "Please enter your email address");
+		frmvalidator.addValidation("billing_email", "email");
+		//<!--END: emailrequiredscript-->
+
+		//<!--START: confirmemailscript-->
+		if (document.billing.billing_confirmemail != null && document.billing.billing_confirmemail != 'undefined') {
+			frmvalidator.addValidation("billing_confirmemail", "maxlen=100", "Max length for Email is 100");
+			frmvalidator.addValidation("billing_confirmemail", "req", "Please confirm your Email.");
+			frmvalidator.addValidation("billing_confirmemail", "email", "Please confirm your Email.");
+			frmvalidator.setAddnlValidationFunction("confirmationValidation");
+		}
+		//<!--END: confirmemailscript-->
+
+		//<!--START: passwordrequiredscript-->
+		frmvalidator.addValidation("pass", "maxlen=20");
+		frmvalidator.addValidation("pass", "req", "Please enter your new password (registration is required)");
+		//<!--END: passwordrequiredscript-->
+
+		frmvalidator.addValidation("billing_country", "dontselect=0");
+
+		if (get_Element('sameAsBilling') != 'undefined' && get_Element('sameAsBilling') != null)
+			if (!document.billing.sameAsBilling.checked) {
+				frmvalidator.addValidation("shipping_firstname", "req", "Please enter your shipping First Name");
+				frmvalidator.addValidation("shipping_firstname", "maxlen=100", "Max length for shipping First Name is 100");
+
+				frmvalidator.addValidation("shipping_lastname", "req", "Please enter your shipping Last Name");
+				frmvalidator.addValidation("shipping_lastname", "maxlen=100", "Max length for shipping Last Name is 100");
+				//<!--START: phonerequiredscript_shipping-->
+				frmvalidator.addValidation("shipping_phone", "maxlen=50", "Max length for shipping Phone is 50");
+				if (get_Element('shipping_country') != 'undefined' && get_Element('shipping_country') != null)
+					if (get_Element('shipping_country').value == "US")
+						frmvalidator.addValidation("shipping_phone", "phone", "Invalid phone number.");
+				frmvalidator.addValidation("shipping_phone", "req", "Please enter your shipping phone")
+				//<!--END: phonerequiredscript_shipping-->
+				frmvalidator.addValidation("shipping_address", "maxlen=255");
+				frmvalidator.addValidation("shipping_address", "req", "Please enter your shipping address");
+
+				frmvalidator.addValidation("shipping_city", "maxlen=100");
+				frmvalidator.addValidation("shipping_city", "req", "Please enter your shipping city");
+
+				if (get_Element('shipping_country').value == "US" || get_Element('shipping_state').type == 'select-one') {
+					frmvalidator.addValidation("shipping_state", "req", "Please enter/select your shipping state");
+					frmvalidator.addValidation("shipping_state", "maxlen=100");
+				}
+
+				frmvalidator.addValidation("shipping_zip", "maxlen=20");
+				frmvalidator.addValidation("shipping_zip", "req", "Please enter your shipping zip code");
+
+				frmvalidator.addValidation("shipping_country", "dontselect=0");
+			}
+
+	}
+</script>
+
+<script type="text/javascript">
+    //You should create the validator only after the definition of the HTML form
+    var frmvalidator = new Validator("billing");
+    frmvalidator.EnableMsgsTogether();
+
+    function confirmationValidation()
+    {
+        if(get_Element("billing_email").value != get_Element("billing_confirmemail").value)
+        {
+            alert('The Email does not match.');
+            return false;
+        }
+        return true;
+    }
+</script> 
+
+
+<!--START: ELAYAWAYGATEWAYSCRIPTS--> 
+<script type="text/javascript" src="https://app2.elayaway.com/javascripts/prototype.js"></script> 
+<script type="text/javascript" src="https://app2.elayaway.com/javascripts/elayaway.js"></script> 
+<script type="text/javascript">
+    function eLayAwayPost() {
+        //Hide the calculator
+        var myDivCalculator = document.getElementById("elayaway_configurator0");
+        myDivCalculator.style.display = 'none';	
+	
+        //Write the selected payment configuration
+        var myDivElayaway = document.getElementById("divElayawayInfo");
+        var intMonths = 0;
+        intMonths = eval(parseInt(document.eci_form.months.value)+1);
+        var myString = "Selected term: " + intMonths + " months";
+        myDivElayaway.innerHTML = myString;
+	
+        document.eci_form.elayawayconfigured.value = "1";
+    }
+</script>
+<form name="eci_form" id="eci_form" method="POST" action="javascript:eLayAwayPost();">
+	<input type="hidden" value="0" name="elayawayconfigured" id="elayawayconfigured"/>
+	<input type="hidden" value="" name="months" id="months"/>
+	<input type="hidden" value="" name="payment_frequency" id="payment_frequency"/>
+</form>
+<!--END: ELAYAWAYGATEWAYSCRIPTS--> 
+
+<!--START: verByVisa--> 
+<div id="divVerByVisa" style="display:none;"> <br />
+  <div style="background-color:#fff; text-align:right; border: 1px solid #ccc; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);"> <a href="#" onclick="javascript:closeVerByVisa();//window.location.reload();">close</a>&nbsp;&nbsp;
+    <div style="text-align:center;">
+      <iframe id="iframeVisa" name="iframeVisa" src="assets/images/spacer.gif" width="750" height="450" scrolling="no" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+<!--END: verByVisa--> 
+
+<!--START: VME_SELECTED_SCRIPT--> 
+<script type="text/javascript">
+    function add_vme_overlay(panel)
+    {
+        var objBody = getElementById_s(panel);
+        var objOverlay = document.createElement("div");
+		
+        objOverlay.setAttribute('id','overlay_'+panel);	
+        objOverlay.className='overlay';
+        objOverlay.style.position = 'absolute';
+        objOverlay.style.textAlign = 'center';
+        objOverlay.style.width = objBody.clientWidth+"px";
+        objOverlay.style.height = objBody.clientHeight+"px";
+        objBody.insertBefore(objOverlay, objBody.firstChild);
+        objOverlay.style.display = 'block';
+
+        get_Element('overlay_'+panel).innerHTML = '<table border=\"0\" width=\"100%\"><tr><td style=\"text-align: left;\"><div style=\"margin:10px 0px 0px 0px;\"><img src=\"assets/templates/common/images/vme_accpt_mark.png\"></div></td></tr></table>';
+    } 	
+    add_vme_overlay("billing_info2");
+    add_vme_overlay("billing_info2");
+    add_vme_overlay("billing_info2");
+    add_vme_overlay("billing_info2");
+</script> 
+<!--END: VME_SELECTED_SCRIPT-->
+
+<!--START: paypaladvance-->
+<form method="post" action="https://payflowlink.paypal.com" name="frmPayPalAdv" id="frmPayPalAdv" target="iframePayPalAdv">
+  <input type="hidden" name="SECURETOKEN" value="">
+  <input type="hidden" name="SECURETOKENID" value="" >
+</form>
+<script type="text/javascript">
+    function openPayPalAdv(strToken, strTokenId) {
+        var elt = document.getElementById("divPayPalAdv");
+
+        //document.getElementById("iframePayPalAdv").src = "https://payflowlink.paypal.com/?SECURETOKEN=" + strToken + "&SECURETOKENID=" + strTokenId;
+        document.getElementById("frmPayPalAdv").SECURETOKEN.value = strToken;
+        document.getElementById("frmPayPalAdv").SECURETOKENID.value = strTokenId;
+        document.getElementById("frmPayPalAdv").submit();
+
+        elt.style.display = 'block';
+    }
+    function checkoutSwitch(bolHide) {
+        if (document.getElementById("spanCheckout")) {
+            if (bolHide)
+                document.getElementById("spanCheckout").style.display = 'none';
+            else
+                document.getElementById("spanCheckout").style.display = 'block';
+        }
+    }
+</script> 
+<!--END: paypaladvance--> 
+<script type="text/javascript" src="/assets/templates/common-core/js/checkout-singlepage.js"></script>
+
+
+<script type="text/javascript" src="assets/templates/common-core/js/checkout.js"></script>
+
+<!--START: delivery_calendar-->
+<link href="assets/templates/common-html5/css/jquery-ui.min.css" rel="stylesheet" />
+<script type="text/javascript" src="assets/templates/common-html5/js/jquery-ui.min.js"></script>
+<script>
+
+    Date.prototype.yyyymmdd = function () {
+        var yyyy = this.getFullYear().toString();
+        var mm = (this.getMonth() + 1).toString(); // getMonth() is zero-based
+        var dd = this.getDate().toString();
+        return yyyy + "-" + (mm[1] ? mm : "0" + mm[0]) + "-" + (dd[1] ? dd : "0" + dd[0]); // padding
+    };
+
+    var maxDays = [maxDays];
+    var productionDays = [productionDays];
+    var disabledDates = "[disabledDates]";
+
+    var array = disabledDates.split(",");
+
+
+    var today = new Date();
+    today = new Date(today.getTime() + today.getTimezoneOffset() * 60000);
+    array.push(today.yyyymmdd());
+
+    for (i = 1; i <= productionDays; i++) {
+        var blockDate = new Date();
+        blockDate = new Date(blockDate.getTime() + blockDate.getTimezoneOffset() * 60000);
+        blockDate.setDate(blockDate.getDate() + i);
+
+        array.push(blockDate.yyyymmdd());
+    }
+
+    jQuery('input.calendar-format').datepicker({
+        beforeShowDay: function (date) {
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            return [array.indexOf(string) == -1]
+        },
+        minDate: 0,
+        maxDate: "+[maxDays]D"
+    });
+</script>
+<!--END: delivery_calendar-->
+
+<!--START: visacheckout_jscript-->
+<style id="antiClickjack">
+	body {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	if (self === top) {
+		var antiClickjack = document.getElementById("antiClickjack");
+		if (antiClickjack)
+			antiClickjack.parentNode.removeChild(antiClickjack);
+	} else {
+		top.location = self.location;
+	}
+</script>
+<script type="text/javascript">
+	function onVmeReady() {
+		//alert(apiKey);
+		var apiKey = '[visacheckout_api_key]';
+		var dataq = '';
+
+		V.init({
+			apikey: apiKey,
+			externalClientId: '[visacheckout_externalclientid]',
+			sourceId: "",
+			settings: {
+				locale: "[visacheckout_locale]",
+				countryCode: "[visacheckout_country]",
+				displayName: "[storename]",
+				logoUrl: "[visacheckout_logourl]",
+				websiteUrl: "[visacheckout_domainname]",
+				shipping: {
+					acceptedRegions: [[visacheckout_shippingcountries]],
+					collectShipping: "[visacheckout_collectshipping]"
+				},
+				payment: {
+					cardBrands: [[cardsaccepted]],
+					acceptCanadianVisaDebit: "[visacheckout_acceptcanadadebitcard]"
+				},
+				review: {
+					buttonAction: "Continue"
+				},
+				dataLevel: "FULL"
+			},
+			paymentRequest: {
+				merchantRequestId: "[visacheckout_orderid]",
+				currencyCode: "[currency_code]",
+				subtotal: "[visacheckout_amount]",
+				total: "[visacheckout_amount]"
+			}
+		}
+		);
+		V.on("payment.success", function (payment) {
+
+			dataq = JSON.stringify(payment);
+
+			jQuery.ajax({
+				url: 'visacheckout.asp',
+				data: 'jdata=' + dataq + '&ac=unpackdata',
+				dataType: 'json',
+				type: 'post',
+				cache: false,
+				error: reportRuleError
+			})
+			.done(function (response) {
+				if (response.k == null)
+					alert('No response from VISA Checkout.  Try again or use another payment method.');
+				else {
+					window.location = 'checkout_one.asp?k=' + response.k + '&wid=' + response.wid;
+				}
+			})
+				.fail(function (strResult) {
+					alert('VISA Checkout Process call failed');
+				});
+
+		});
+
+		V.on("payment.cancel", function (payment) {
+			alert("VISA Checkout Payment method selection canceled.");
+		});
+
+		V.on("payment.error", function (payment, error) {
+			alert("Problem encountered with VISA Checkout service");
+		});
+
+	}
+
+	function reportRuleError(jqXHR, textStatus) {
+		if (jqXHR.status > 0) {
+			alert("Error processing VISA Checkout request ");
+		}
+	}
+</script>
+<!--END: visacheckout_jscript-->
+
+<!--START: stripe_applepay_button_js-->
+[stripeApplePay_js]
+<!--END: stripe_applepay_button_js-->
+
+<link rel="stylesheet" href="/assets/templates/common-core/lib/labelholder/labelholder.min.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/assets/templates/common-core/lib/labelholder/labelholder.min.js"></script>
+<script>
+	$(function() {
+		 $('.labelholder').labelholder();
+	});
+</script>
+<!--END: template_scripts-->

@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>[TITLE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    [META]
+
+    <!--START: FRAME_RSSFEEDS -->
+    <link rel="alternate" type="application/rss+xml" title="Featured Items (RSS 2.0)" href="[store_url]/rss.asp?type=home" />
+    <link rel="alternate" type="application/rss+xml" title="Products On Sale (RSS 2.0)" href="[store_url]/rss.asp?type=onsale" />
+    <link rel="alternate" type="application/rss+xml" title="New Releases (RSS 2.0)" href="[store_url]/rss.asp?type=newreleases" />
+    <link rel="alternate" type="application/rss+xml" title="Best Sellers (RSS 2.0)" href="[store_url]/rss.asp?type=bestsellers" />
+    <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="[store_url]/rss.asp?type=blog" />
+    <!--END: FRAME_RSSFEEDS -->
+
+    <!--START: page_styles-->
+    <link rel="StyleSheet" href="assets/templates/[template]/lib/css/bootstrap.css" type="text/css" />
+    <link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+    [page_styles]    
+    <link rel="StyleSheet" href="assets/templates/[template]/lib/css/all.css" type="text/css" />   
+    <link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" /> 
+    <!--END: page_styles-->
+
+
+</head>
+
+<body class="[body_class] primary-bg" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
+    <!--START: FRAME_MENU-->
+    <div class="upper-nav-wrapper">
+        <nav id="menulinks-outer" class="navbar navbar-expand-lg navbar-dark ">
+            <div class="col-3">
+                <div class="logo">
+                    <!--START: global_header-->
+                    <h3 class="store-name">[storename]</h3>
+                    <h4 class="store-slogan">[storeslogan]</h4>
+                    <!--END: global_header-->
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul id="menulinks" class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!--START: menuitems_view-->
+                    <!--START: TOP_LINK_FORMAT-->
+                    <li class="nav-item"><a href="infopage.asp?page=[link_id]" class="nav-link" target="[link_target]">[link_name]</a></li>
+                    <!--END: TOP_LINK_FORMAT-->
+                    <!--END: menuitems_view-->
+                </ul>
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="view_cart.asp"><i class="fas fa-shopping-cart"></i>
+                            [ITEMSINCART] - [frame_shopping-cart-text] ([SUBTOTAL])</a></li>
+                </ul>
+                <form method="get" name="searchForm" action="search.asp" class="form-inline my-2 my-lg-0">
+                    <input id="searchlight" name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!--END: FRAME_MENU-->
+    <div class="container">
+        <div class="lower-nav-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <h2 class="">Categories</h2>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!--START: FRAME_CATEGORY-->
+                    <ul class="navbar-nav">
+                        <!--START: CATEGORIES-->
+                        <li class="nav-item">
+                            <!--START: CATEGORY_FORMAT-->
+                            <a class="nav-link" href="view_category.asp?cat=CATID" [dropdown_attributes]>CATEGORY</a>
+                            <!--END: CATEGORY_FORMAT-->
+
+                            <!--START: SUB_CATEGORIES-->
+                            <ul class="navbar-nav">
+                                <!--START: SUB_CATEGORY_FORMAT-->
+                                <li><a class="nav-link" href="view_category.asp?cat=CATID">CATEGORY</a></li>
+                                <!--END: SUB_CATEGORY_FORMAT-->
+                            </ul>
+                            <!--END: SUB_CATEGORIEST-->
+                        </li>
+                        <!--END: CATEGORIES-->
+                    </ul>
+                    <!--END: FRAME_CATEGORY-->
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!--START: shopping_cart-->
+    <div id="floating-cart" class="floating-cart">
+        <a href="view_cart.asp" class="minicart-inner clearfix">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-details">
+                <span class="minicart-items">[ITEMSINCART]</span> [frame_ITEMSINCART-text]
+            </span>
+        </a>
+    </div>
+    <!--END: shopping_cart-->
+
+    <!--Get current page template-->
+    <div class="container">
+        <section class="main-block clearfix">
+            [page_content]
+        </section>
+    </div>
+    <!--/Get current page template-->
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-7">
+
+                    <!--START: FRAME_LINKS-->
+                    <h5 class="">Company Links</h5>
+
+                    <ul id="extrapages" class="list-unstyled row">
+                        <!--START: LINKS-->
+                        <!--START: LINK_FORMAT-->
+                        <li class="col-md-6 col-sm-4"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]"
+                                class="menu-bottom">[link_name]</a></li>
+                        <!--END: LINK_FORMAT-->
+                        <!--END: LINKS-->
+                    </ul>
+                    <!--END: FRAME_LINKS-->
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-md-5">
+                    <!--START: FRAME_MAILLIST-->
+                    <div class="mailist-box ajax-mailinglist" data-callfront="mailinglist_callfront" data-callback="mailinglist_response">
+                        <form method="post" name="mailing" action="mailing_list_ajax.asp">
+                            <h5>[frame_mailinglist]</h5>
+                            <p>[mailinglist_text]</p>
+                            <div class="mailinglist-form clearfix">
+                                <input class="mailinglist-input form-control" type="text" name="email" placeholder="Enter your email address"
+                                    autocomplete="off" />
+                                <button class="mailinglist-submit btn btn-default" type="submit" name="www">
+                                    <span id="mailing-btn-txt"><i class="fas fa-play"></i></i></span>
+                                    <span id="mailing-btn-load" class="mailing-btn-load icon-spin2 animate-spin hidden"></span>
+                                </button>
+                            </div>
+                            <div class="clearfix maillist-options">
+                                <div class="subscribe"><input id="list_subscribe" type="radio" name="subscribe" value="1"
+                                        checked="checked"> <label for="list_subscribe">[mailinglist_subscribe]</label></div>
+                                <div class="subscribe"><input id="list_unsubscribe" type="radio" name="subscribe" value="0">
+                                    <label for="list_unsubscribe">[mailinglist_unsubscribe]</label></div>
+                            </div>
+                        </form>
+                        <div id="mailinglist-response" class="mailinglist-response">
+                            <div class="mailinglist-error hidden"><i class="fas fa-exclamation-triangle"></i></i></span>[mailinglist_email-error]</div>
+                            <div class="mailinglist-subscribed hidden"><i class="fas fa-check"></i>[mailinglist_subscribe-success]</div>
+                            <div class="mailinglist-unsubscribed hidden"><i class="fas fa-check"></i>[mailinglist_unsubscribe-success]</div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!--END: FRAME_MAILLIST-->
+
+                    <!--START: social_icons-->
+                    <div class="social-icons">
+                        <h3>Social Media</h3>
+                        <ul class="list-unstyled list-inline">
+                            <!--<li class="social-icons-label hidden-md hidden-sm hidden-xs">[frame_social-icons-heading]</li>-->
+                            <!--START: social_link_facebook-->
+                            <li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook">
+                                    <i class="fab fa-facebook-f"></i></a></li>
+                            <!--END: social_link_facebook-->
+                            <!--START: social_link_twitter-->
+                            <li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a></li>
+                            <!--END: social_link_twitter-->
+                            <!--START: social_link_googleplus-->
+                            <li><a href="[social_link_googleplus_url]" class="gplus" target="_blank" title="Follow Us on Google+">
+                                    <i class="fab fa-google-plus-g"></i></a></li>
+                            <!--END: social_link_googleplus-->
+                            <!--START: social_link_youTube-->
+                            <li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel">
+                                    <i class="fab fa-youtube"></i></a></li>
+                            <!--END: social_link_youTube-->
+                            <!--START: social_link_pinterest-->
+                            <li><a href="[social_link_pinterest_url]" class="pinterest" target="_blank" title="Follow Us on Pinterest">
+                                    <i class="fab fa-pinterest-p"></i></a></li>
+                            <!--END: social_link_pinterest-->
+                            <!--START: social_link_instagram-->
+                            <li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram">
+                                    <i class="fab fa-instagram"></i></a></li>
+                            <!--END: social_link_instagram-->
+                            <!--START: social_link_tumblr-->
+                            <li><a href="[social_link_tumblr_url]" class="tumblr" target="_blank" title="Follow Us on Tumblr">
+                                    <i class="fab fa-tumblr"></i></a></li>
+                            <!--END: social_link_tumblr-->
+                            <!--START: social_link_blog-->
+                            <li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog">
+                                    <i class="fas fa-rss"></i></a></li>
+                            <!--END: social_link_blog-->
+                        </ul>
+                    </div>
+                    <!--END: social_icons-->
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="copyright_txt">
+                            <div>[frame_copyright1]</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!--START: global_footer-->
+                        <div class="global-footer">[GLOBAL_FOOTER]</div>
+                        <!--END: global_footer-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--START: quickview_modal-->
+    [quickview_modal]
+    <!--END: quickview_modal-->
+
+
+    <!--START: page_scripts-->
+    <script src="assets/templates/[template]/lib/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/templates/[template]/lib/js/popper.min.js"></script>
+    <script src="assets/templates/[template]/lib/js/bootstrap.js"></script>
+    <script src="assets/templates/[template]/lib/js/all.js"></script>
+
+    <script src="assets/templates/common-core/js/core.js"></script>
+    <script src="assets/templates/[template]/js/main.js"></script>
+    [page_scripts]
+    <!--END: page_scripts-->
+
+    <!--START: 3dcart stats-->
+    <div class="stats hidden">
+        <script type="text/javascript">
+            //<![CDATA[
+            var file = '/stats/count.asp';
+            var stats_d = new Date();
+            var stats_s = stats_d.getSeconds();
+            var stats_m = stats_d.getMinutes();
+            var stats_x = stats_s * stats_m;
+            var prdID = '[catalogid]';
+            var catID = '[catid]';
+            stats_f = '' + escape(document.referrer); stats_f = stats_f.replace('_', '----');
+            if (navigator.appName == 'Netscape') { stats_b = 'NS'; }
+            if (navigator.appName == 'Microsoft Internet Explorer') { stats_b = 'MSIE'; }
+            if (navigator.appVersion.indexOf('MSIE 3') > 0) { stats_b = 'MSIE'; }
+            stats_u = '' + escape(document.URL); stats_u = stats_u.replace('_', '----'); stats_w = screen.width; stats_h = screen.height;
+            stats_v = navigator.appName;
+            stats_fs = window.screen.fontSmoothingEnabled;
+            if (stats_v != 'Netscape') { stats_c = screen.colorDepth; }
+            else { stats_c = screen.pixelDepth; }
+            stats_j = navigator.javaEnabled();
+            info = 'w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u=' + stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+            document.write('<img src="' + file + '?' + info + '" width="1" height="1" border="0" alt="stats" />');
+        //]]>
+        </script>
+        <noscript>
+            <img src="/stats/count.asp" width="90" height="30" alt="" />
+        </noscript>
+    </div>
+    <!--END: 3dcart stats-->
+
+</body>
+
+</html>

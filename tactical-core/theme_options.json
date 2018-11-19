@@ -1,0 +1,819 @@
+{
+  "theme_name":"Gunstore",
+  "selected_preset":0,
+  "field_groups":[
+     {
+        "name":"Header"
+     },
+     {
+        "name":"Text & Buttons"
+     },
+     {
+        "name":"Typography"
+     },
+     {
+        "name":"Products"
+     },
+     {
+        "name":"Footer"
+     }
+  ],
+  "theme_presets":[
+     {
+        "isCustom":0,
+        "name":"Default",
+        "fields":[
+           {
+              "label":"Header color",
+              "name":"header_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":0
+           },
+           {
+              "label":"Header text color",
+              "name":"header_text_color",
+              "type":2,
+              "value":"f0da98",
+              "group":0
+           },
+           {
+              "label":"Navigation color",
+              "name":"nav_color",
+              "type":2,
+              "value":"F0DA98",
+              "group":0
+           },
+           {
+              "label":"Navigation text color",
+              "name":"nav_text_color",
+              "type":2,
+              "value":"1d1d1d",
+              "group":0
+           },
+           {
+              "label":"Headings color",
+              "name":"headings_color",
+              "type":2,
+              "value":"464646",
+              "group":1
+           },
+           {
+              "label":"Body text color",
+              "name":"body_text_color",
+              "type":2,
+              "value":"464646",
+              "group":1
+           },
+           {
+              "label":"Primary button color",
+              "name":"btn_color",
+              "type":2,
+              "value":"f0da98",
+              "group":1
+           },
+           {
+              "label":"Primary button border",
+              "name":"btn_border",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Primary button text color",
+              "name":"btn_text_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Secondary button color",
+              "name":"btn2_color",
+              "type":2,
+              "value":"f0da98",
+              "group":1
+           },
+           {
+              "label":"Secondary button border",
+              "name":"btn2_border",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Secondary button text color",
+              "name":"btn2_text_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Base font size",
+              "name":"base_font_size",
+              "type":3,
+              "value":"14",
+              "options":[
+                 {
+                    "text":"14px",
+                    "value":14
+                 },
+                 {
+                    "text":"15px",
+                    "value":15
+                 },
+                 {
+                    "text":"16px",
+                    "value":16
+                 },
+                 {
+                    "text":"17px",
+                    "value":17
+                 },
+                 {
+                    "text":"18px",
+                    "value":18
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"Heading base size",
+              "name":"heading_base_size",
+              "type":3,
+              "value":"30",
+              "options":[
+                 {
+                    "text":"24px",
+                    "value":24
+                 },
+                 {
+                    "text":"25px",
+                    "value":25
+                 },
+                 {
+                    "text":"26px",
+                    "value":26
+                 },
+                 {
+                    "text":"27px",
+                    "value":27
+                 },
+                 {
+                    "text":"28px",
+                    "value":28
+                 },
+                 {
+                    "text":"29px",
+                    "value":29
+                 },
+                 {
+                    "text":"30px",
+                    "value":30
+                 },
+                 {
+                    "text":"31px",
+                    "value":31
+                 },
+                 {
+                    "text":"32px",
+                    "value":32
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"On sale",
+              "name":"sale_text",
+              "type":2,
+              "value":"302c1e",
+              "group":3
+           },
+           {
+              "label":"Free shipping text",
+              "name":"free_shipping_text",
+              "type":2,
+              "value":"333333",
+              "group":3
+           },
+           {
+              "label":"Rating stars color",
+              "name":"stars_color",
+              "type":2,
+              "value":"f0da98",
+              "group":3
+           },
+           {
+              "label":"Footer color",
+              "name":"footer_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":4
+           },
+           {
+              "label":"Footer text color",
+              "name":"footer_text_color",
+              "type":2,
+              "value":"ffffff",
+              "group":4
+           }
+        ]
+     },
+     {
+        "isCustom":0,
+        "name":"Yello Stone",
+        "fields":[
+           {
+              "label":"Header color",
+              "name":"header_color",
+              "type":2,
+              "value":"142426",
+              "group":0
+           },
+           {
+              "label":"Header text color",
+              "name":"header_text_color",
+              "type":2,
+              "value":"D1B748",
+              "group":0
+           },           
+           {
+              "label":"Navigation color",
+              "name":"nav_color",
+              "type":2,
+              "value":"D1B748",
+              "group":0
+           },
+           {
+              "label":"Navigation text color",
+              "name":"nav_text_color",
+              "type":2,
+              "value":"142426",
+              "group":0
+           },
+           {
+              "label":"Headings color",
+              "name":"headings_color",
+              "type":2,
+              "value":"002F36",
+              "group":1
+           },
+           {
+              "label":"Body text color",
+              "name":"body_text_color",
+              "type":2,
+              "value":"464646",
+              "group":1
+           },
+           {
+              "label":"Primary button color",
+              "name":"btn_color",
+              "type":2,
+              "value":"D1B748",
+              "group":1
+           },
+           {
+              "label":"Primary button border",
+              "name":"btn_border",
+              "type":2,
+              "value":"142426",
+              "group":1
+           },
+           {
+              "label":"Primary button text color",
+              "name":"btn_text_color",
+              "type":2,
+              "value":"142426",
+              "group":1
+           },
+           {
+              "label":"Secondary button color",
+              "name":"btn2_color",
+              "type":2,
+              "value":"142426",
+              "group":1
+           },
+           {
+              "label":"Secondary button border",
+              "name":"btn2_border",
+              "type":2,
+              "value":"D1B748",
+              "group":1
+           },
+           {
+              "label":"Secondary button text color",
+              "name":"btn2_text_color",
+              "type":2,
+              "value":"D1B748",
+              "group":1
+           },
+           {
+              "label":"Base font size",
+              "name":"base_font_size",
+              "type":3,
+              "value":"14",
+              "options":[
+                 {
+                    "text":"14px",
+                    "value":14
+                 },
+                 {
+                    "text":"15px",
+                    "value":15
+                 },
+                 {
+                    "text":"16px",
+                    "value":16
+                 },
+                 {
+                    "text":"17px",
+                    "value":17
+                 },
+                 {
+                    "text":"18px",
+                    "value":18
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"Heading base size",
+              "name":"heading_base_size",
+              "type":3,
+              "value":"30",
+              "options":[
+                 {
+                    "text":"24px",
+                    "value":24
+                 },
+                 {
+                    "text":"25px",
+                    "value":25
+                 },
+                 {
+                    "text":"26px",
+                    "value":26
+                 },
+                 {
+                    "text":"27px",
+                    "value":27
+                 },
+                 {
+                    "text":"28px",
+                    "value":28
+                 },
+                 {
+                    "text":"29px",
+                    "value":29
+                 },
+                 {
+                    "text":"30px",
+                    "value":30
+                 },
+                 {
+                    "text":"31px",
+                    "value":31
+                 },
+                 {
+                    "text":"32px",
+                    "value":32
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"On sale",
+              "name":"sale_text",
+              "type":2,
+              "value":"002F36",
+              "group":3
+           },
+           {
+              "label":"Free shipping text",
+              "name":"free_shipping_text",
+              "type":2,
+              "value":"D1B748",
+              "group":3
+           },
+           {
+              "label":"Rating stars color",
+              "name":"stars_color",
+              "type":2,
+              "value":"D1B748",
+              "group":3
+           },
+           {
+              "label":"Footer color",
+              "name":"footer_color",
+              "type":2,
+              "value":"002F36",
+              "group":4
+           },
+           {
+              "label":"Footer text color",
+              "name":"footer_text_color",
+              "type":2,
+              "value":"ffffff",
+              "group":4
+           }
+        ]
+     },
+     {
+        "isCustom":0,
+        "name":"Theme Yes",
+        "fields":[
+           {
+              "label":"Header color",
+              "name":"header_color",
+              "type":2,
+              "value":"161A26",
+              "group":0
+           },
+           {
+              "label":"Header text color",
+              "name":"header_text_color",
+              "type":2,
+              "value":"D9B7B0",
+              "group":0
+           },
+           {
+              "label":"Navigation color",
+              "name":"nav_color",
+              "type":2,
+              "value":"8C5656",
+              "group":0
+           },
+           {
+              "label":"Navigation text color",
+              "name":"nav_text_color",
+              "type":2,
+              "value":"161A26",
+              "group":0
+           },
+           {
+              "label":"Headings color",
+              "name":"headings_color",
+              "type":2,
+              "value":"161A26",
+              "group":1
+           },
+           {
+              "label":"Body text color",
+              "name":"body_text_color",
+              "type":2,
+              "value":"464646",
+              "group":1
+           },
+           {
+              "label":"Primary button color",
+              "name":"btn_color",
+              "type":2,
+              "value":"D9B7B0",
+              "group":1
+           },
+           {
+              "label":"Primary button border",
+              "name":"btn_border",
+              "type":2,
+              "value":"161A26",
+              "group":1
+           },
+           {
+              "label":"Primary button text color",
+              "name":"btn_text_color",
+              "type":2,
+              "value":"161A26",
+              "group":1
+           },
+           {
+              "label":"Secondary button color",
+              "name":"btn2_color",
+              "type":2,
+              "value":"161A26",
+              "group":1
+           },
+           {
+              "label":"Secondary button border",
+              "name":"btn2_border",
+              "type":2,
+              "value":"D9B7B0",
+              "group":1
+           },
+           {
+              "label":"Secondary button text color",
+              "name":"btn2_text_color",
+              "type":2,
+              "value":"D9B7B0",
+              "group":1
+           },
+           {
+              "label":"Base font size",
+              "name":"base_font_size",
+              "type":3,
+              "value":"14",
+              "options":[
+                 {
+                    "text":"14px",
+                    "value":14
+                 },
+                 {
+                    "text":"15px",
+                    "value":15
+                 },
+                 {
+                    "text":"16px",
+                    "value":16
+                 },
+                 {
+                    "text":"17px",
+                    "value":17
+                 },
+                 {
+                    "text":"18px",
+                    "value":18
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"Heading base size",
+              "name":"heading_base_size",
+              "type":3,
+              "value":"30",
+              "options":[
+                 {
+                    "text":"24px",
+                    "value":24
+                 },
+                 {
+                    "text":"25px",
+                    "value":25
+                 },
+                 {
+                    "text":"26px",
+                    "value":26
+                 },
+                 {
+                    "text":"27px",
+                    "value":27
+                 },
+                 {
+                    "text":"28px",
+                    "value":28
+                 },
+                 {
+                    "text":"29px",
+                    "value":29
+                 },
+                 {
+                    "text":"30px",
+                    "value":30
+                 },
+                 {
+                    "text":"31px",
+                    "value":31
+                 },
+                 {
+                    "text":"32px",
+                    "value":32
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"On sale",
+              "name":"sale_text",
+              "type":2,
+              "value":"8C5656",
+              "group":3
+           },
+           {
+              "label":"Free shipping text",
+              "name":"free_shipping_text",
+              "type":2,
+              "value":"161A26",
+              "group":3
+           },
+           {
+              "label":"Rating stars color",
+              "name":"stars_color",
+              "type":2,
+              "value":"8C5656",
+              "group":3
+           },
+           {
+              "label":"Footer color",
+              "name":"footer_color",
+              "type":2,
+              "value":"0D0D0D",
+              "group":4
+           },
+           {
+              "label":"Footer text color",
+              "name":"footer_text_color",
+              "type":2,
+              "value":"ffffff",
+              "group":4
+           }
+        ]
+     },
+     {
+        "isCustom":1,
+        "name":"Custom",
+        "fields":[
+           {
+              "label":"Header color",
+              "name":"header_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":0
+           },
+           {
+              "label":"Header text color",
+              "name":"header_text_color",
+              "type":2,
+              "value":"f0da98",
+              "group":0
+           },
+           {
+              "label":"Navigation color",
+              "name":"nav_color",
+              "type":2,
+              "value":"F0DA98",
+              "group":0
+           },
+           {
+              "label":"Navigation text color",
+              "name":"nav_text_color",
+              "type":2,
+              "value":"1d1d1d",
+              "group":0
+           },
+           {
+              "label":"Headings color",
+              "name":"headings_color",
+              "type":2,
+              "value":"464646",
+              "group":1
+           },
+           {
+              "label":"Body text color",
+              "name":"body_text_color",
+              "type":2,
+              "value":"464646",
+              "group":1
+           },
+           {
+              "label":"Primary button color",
+              "name":"btn_color",
+              "type":2,
+              "value":"f0da98",
+              "group":1
+           },
+           {
+              "label":"Primary button border",
+              "name":"btn_border",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Primary button text color",
+              "name":"btn_text_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Secondary button color",
+              "name":"btn2_color",
+              "type":2,
+              "value":"f0da98",
+              "group":1
+           },
+           {
+              "label":"Secondary button border",
+              "name":"btn2_border",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Secondary button text color",
+              "name":"btn2_text_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":1
+           },
+           {
+              "label":"Base font size",
+              "name":"base_font_size",
+              "type":3,
+              "value":"14",
+              "options":[
+                 {
+                    "text":"14px",
+                    "value":14
+                 },
+                 {
+                    "text":"15px",
+                    "value":15
+                 },
+                 {
+                    "text":"16px",
+                    "value":16
+                 },
+                 {
+                    "text":"17px",
+                    "value":17
+                 },
+                 {
+                    "text":"18px",
+                    "value":18
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"Heading base size",
+              "name":"heading_base_size",
+              "type":3,
+              "value":"30",
+              "options":[
+                 {
+                    "text":"24px",
+                    "value":24
+                 },
+                 {
+                    "text":"25px",
+                    "value":25
+                 },
+                 {
+                    "text":"26px",
+                    "value":26
+                 },
+                 {
+                    "text":"27px",
+                    "value":27
+                 },
+                 {
+                    "text":"28px",
+                    "value":28
+                 },
+                 {
+                    "text":"29px",
+                    "value":29
+                 },
+                 {
+                    "text":"30px",
+                    "value":30
+                 },
+                 {
+                    "text":"31px",
+                    "value":31
+                 },
+                 {
+                    "text":"32px",
+                    "value":32
+                 }
+              ],
+              "group":2
+           },
+           {
+              "label":"On sale",
+              "name":"sale_text",
+              "type":2,
+              "value":"302c1e",
+              "group":3
+           },
+           {
+              "label":"Free shipping text",
+              "name":"free_shipping_text",
+              "type":2,
+              "value":"333333",
+              "group":3
+           },
+           {
+              "label":"Rating stars color",
+              "name":"stars_color",
+              "type":2,
+              "value":"f0da98",
+              "group":3
+           },
+           {
+              "label":"Footer color",
+              "name":"footer_color",
+              "type":2,
+              "value":"1c1c1c",
+              "group":4
+           },
+           {
+              "label":"Footer text color",
+              "name":"footer_text_color",
+              "type":2,
+              "value":"ffffff",
+              "group":4
+           }
+        ]
+     }
+  ]
+}
