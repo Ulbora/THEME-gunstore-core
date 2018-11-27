@@ -1,0 +1,432 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+	<div class="container">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+			<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[account_contact-us]</span></li>
+		</ol>
+	</div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[account_contact-us-form]</h1>
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="contactUsHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+    </div>
+</section>
+
+<section id="contactus" class="contactus-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12 clearfix">
+                <div class="store_data">
+                	<h4 class="store-name"><i class="fas fa-map-pin"></i> [store_name]</h4>
+                    <div class="store-address">
+                    	<i class="fas fa-building"></i>
+                        <div class="store-address1 item">[store_address1], [store_address2]</div>
+                        <div class="store-city item">[store_city], [store_state]. [store_zip]</div>
+                        <div class="store-country item">[store_country]</div>
+                    </div>
+                    <div class="store-location item">
+                    	<a href="http://maps.google.com/maps?oi=map&q=[store_address1]+[store_city]+[store_state]+[store_zip]" target="_self" class="icon-btn icon-btn-geopin">
+                        	<i class="fas fa-map-marker-alt"></i>
+                            <div>Get Directions</div>
+                        </a>
+                    </div>
+                    <div class="store-phone item">
+                    	<a href="tel:[store_phone]">
+                        	<i class="fas fa-phone"></i>
+                            <div>[store_phone]</div>
+                        </a>
+                    </div>
+                    <div class="store-email item">
+                    	<a href="mailto:[store_email]">
+                        	<i class="fas fa-envelope"></i>
+                            <div>[store_email]</div>
+                        </a>
+                    </div>
+                </div>
+				<!--START: crm_form-->
+                <div class="form_data">
+                	<p>[account_contact-us-info]</p>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <form method="post" action="crm.asp" id="frmForm" name="frmForm" >
+                            <input type="hidden" name="action" id="action" value="" />
+                            <input type="hidden" name="custid" value="[custid]" />
+                            <input type="hidden" name="orderid" value="[orderid]" />
+                            <input type="hidden" name="productid" value="[productid]" />
+                            <div class="crmField col-lg-6">
+                                <label for="customer">[crm_name] <span class="error-img required">*</span></label>
+                                <input type="text" name="customer" value="[name]" placeholder="[crm_name]" size="40" maxlength="50" tabindex="1" class="form-control txtBoxStyle" />
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="crmField col-lg-6">
+                                <label for="custemail">[crm_email] <span class="error-img required">*</span></label>
+                                <input type="email" name="custemail" value="[email]" placeholder="[crm_email]" size="40" maxlength="50" tabindex="2" class="form-control txtBoxStyle" data-parsley-trigger="change" />
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="crmField col-lg-6">
+                                <label for="phone">[crm_phone] <span class="error-img required">*</span></label>
+                                <input type="text" name="phone" value="[phone]" placeholder="[crm_phone]" size="40" maxlength="50" tabindex="3" class="form-control txtBoxStyle" />
+                                <div class="clearfix"></div>
+                            </div>
+    
+                            <div class="crmField col-lg-12">
+                                <label for="departmentid">[crm_department]</label>
+                                <select name="departmentid" id="departmentid" tabindex="4" class="form-control txtBoxStyle">
+                                    [deptdropdown]
+                                </select>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="crmField col-lg-12">
+                                <label for="subject">[crm_subject] <span class="error-img required">*</span></label>
+                                <input name="subject" type="text" id="subject" value="" placeholder="[crm_subject] *" size="40" maxlength="150" tabindex="5" class="form-control txtBoxStyle" />
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="crmField col-lg-12">
+                                <label for="reply">[crm_message] <span class="error-img required">*</span></label>
+                                <textarea name="reply" id="reply" tabindex="6" class="form-control txtBoxStyle" data-parsley-trigger="keyup" placeholder="[crm_message]" ></textarea>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!--START: crmFileAttachments-->
+							<div class="crmField col-lg-12">
+								<div class="file-attachments-button">
+									<span class="btn fileinput-button btn-default">
+										<i class="fas fa-plus"></i>
+										<span>Select files...</span>
+                                    <!-- The file input field used as target for the file upload widget -->
+										<input id="fileupload" type="file" name="files[]" multiple="" data-url="/filesaction.asp?action=upload&folder=temp&hid=[filehash]" onclick='fnCountReset();'">
+                                </span>
+								</div>
+                                <p></p>
+                    
+                                <div id="progress">
+                                    <div class="bar" style="width: 0%;"></div>
+                                </div>
+                                <!-- The container for the uploaded files -->
+                                <div id="files" class="files-to-upload"></div>
+                                <input id="fileattachment" name="fileattachment" type="hidden" />
+                                <p id="allelements"></p>
+                            </div>
+                            <!--END: crmFileAttachments-->
+                            
+                            <!--START: gdpr_policy_enforced-->
+                            <div class="crmField col-lg-12">                      
+                                <label for="privacy_accepted" class="privacy-accepted">                                
+                                    <input type="checkbox" name="privacy_accepted" value="0" id="privacy_accepted" class="txtBoxStyle"  />
+                                    <i></i>[grpr_privacy-policy-terms]
+                                    <span class="error-img required">*</span>
+                                </label>
+                                <div class="clearfix"></div>
+			                </div>
+                            <!--END: gdpr_policy_enforced-->
+
+                            <div class="clearfix"></div>
+                            <!--START: captcha-->
+                            <div class="crmField col-lg-12">
+                                <label for="ramdomWord">Verification:</label>
+                                <div class="clearfix"></div>
+                                <div class="captcha">
+                                    <img src="admin/image_pw.asp" width="148" alt="" />
+                                    <div class="captcha-text">Type the word above...</div>
+                                    <input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="7" class="txtBoxStyle" required="" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--END: captcha-->
+                            <!--START: recaptcha-->
+                            <div class="crmField col-lg-12">
+                                <div class="clearfix"></div>
+                                <div class="recaptcha">
+                                    <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+                                    <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+                                    <noscript>
+                                        <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+                                        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                                    </noscript>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--END: recaptcha-->
+
+                            <!--START: recaptcharobot-->
+							<div class="crmField col-lg-12">
+                                <!--START: verificationlabel-->
+								<label for="recaptcha_challenge_field">Verification:</label>
+								<!--END: verificationlabel-->
+
+								<script type="text/javascript">
+                                    var onSubmit = function (token) {
+                                        if ('[recaptcha_robot_size]' == 'invisible')
+                                            submitFormContactUs('addnew');
+                                    }
+									var onloadCallback = function () {
+									    grecaptcha.render('divRobocop', {
+									        'sitekey': '[recaptcha_key]',
+									        'theme': '[recaptcha_robot_theme]',
+									        'size': '[recaptcha_robot_size]',
+									        'type': '[recaptcha_robot_type]',
+									        'callback': onSubmit
+									    });
+									}
+								</script>
+								<script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+								<div id="divRobocop"></div>
+                            </div>
+                            
+                            <!--END: recaptcharobot-->
+
+                            <div class="clearfix"></div>
+                            <div id="divSubmitButton" class="crmField col-lg-12">
+								<script>
+                                    function submitted_onclick() {
+                                        if (ValidateForm(frmForm)) {
+                                            if ('[recaptcha_robot_size]' == 'invisible')
+                                                grecaptcha.execute();
+                                            else {
+                                                submitFormContactUs('addnew');
+                                            }
+                                        }
+                                    }
+								</script>
+                                <button type="button" class="btn btn-default btn-inverse" onclick="return submitted_onclick();">[crm_button-add-ticket]</button>
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+				<!--END: crm_form-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page_footer">
+  <div class="container">
+    <!--START: CATEGORY_FOOTER-->
+    <div class="category-footer" id="contactUsFooter">[CONTENT]</div>
+    <!--END: CATEGORY_FOOTER-->
+  </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/contact_us.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script>
+
+<script type="text/javascript">
+	var addReplyClick = 0;
+	
+	function submitFormContactUs(strAction) {	
+		document.frmForm.action.value = strAction;
+		document.frmForm.submit();
+	}
+	function ValidateForm() {
+		var strMsg = "";
+		if (document.frmForm.customer.value.trim() == "")
+			strMsg += " - [crm_name] cannot be blank.\n";
+		if (document.frmForm.custemail.value.trim() == "" || !isValidEmail(document.frmForm.custemail.value))
+			strMsg += " - [crm_email] cannot be blank and must be a valid email address.\n";
+		if (document.frmForm.subject.value.trim() == "")
+			strMsg += " - [crm_subject] cannot be blank.\n";
+		if (document.frmForm.reply.value.trim() == "")
+			strMsg += " - [crm_message] cannot be blank.\n";
+		//<!--START: captchascript-->
+		if (document.frmForm.ramdomWord.value.trim() == "")
+			strMsg += " - Verification word cannot be blank.\n";			
+		//<!--END: captchascript-->
+            
+		if (jQuery("#gdpr_privacy_enforced").val() == "1") {
+		    if (!jQuery('#privacy_accepted').is(':checked'))
+		        strMsg += " - " + GetLanguagItem('gdpr_privacy-policy-validation-message') + "\n";
+		}
+
+		if (ExistsCreditCard(jQuery('#reply').val()))
+			strMsg += "[ccNumerNotAllowedMessage]";
+
+		if (strMsg != "") {
+			alert(strMsg);
+			return false;
+		}
+		if (addReplyClick == 0) {
+			addReplyClick = 1;
+			return true;
+		}
+	
+	}
+	
+	String.prototype.trim = function() {
+		return this.replace(/^\s+|\s+$/g,"");
+	}
+
+	function isValidEmail(str) {
+	
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		
+		if (str.indexOf(at)==-1)
+		return false
+	
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr)
+		return false
+	
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr)
+			return false
+	
+		if (str.indexOf(at,(lat+1))!=-1)
+			return false
+	
+		if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot)
+			return false
+	
+		if (str.indexOf(dot,(lat+2))==-1)
+			return false
+		
+		if (str.indexOf(" ")!=-1)
+			return false
+	
+		return true					
+	}
+</script>    
+
+<!--START: crmFileAttachments_js-->
+<script type="text/javascript" src="js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+<script type="text/javascript">
+	function fnCountReset() {
+		intFileCount = 0;
+		intFileDeleted = 0;
+	}
+
+	var bUploading = false;
+	var intFileCount = 0;
+	var intFileDeleted = 0;
+
+	var list = [];
+	jQuery(function () {
+		jQuery("#fileattachment").val('');
+
+
+		jQuery('#fileupload').fileupload({
+			dataType: 'json',
+			add: function (e, data) {
+				intFileCount = intFileCount + 1;
+				var extn = "", filename = "";
+				var intFilesUploaded = 0;
+
+				if (jQuery("#fileattachment").val() != "") {
+					intFilesUploaded = jQuery("#fileattachment").val().split(",").length;
+				}
+
+				intFileTotal = intFilesUploaded + intFileCount - intFileDeleted
+				if (intFileTotal > 4) {
+					alert("[crm_filelimit]");
+					return false;
+				}
+				else {
+					var filename = data.files[0].name;
+
+					if (filename.lastIndexOf(".") > 0) {
+						extn = filename.substring(filename.lastIndexOf(".") + 1, filename.length);
+						if (extn.toLowerCase() == "gif" || extn.toLowerCase() == "jpg" || extn.toLowerCase() == "jpeg" || extn.toLowerCase() == "png" || extn.toLowerCase() == "bmp" || extn.toLowerCase() == "psd" || extn.toLowerCase() == "tif" || extn.toLowerCase() == "zip" || extn.toLowerCase() == "doc" || extn.toLowerCase() == "docx" || extn.toLowerCase() == "pdf" || extn.toLowerCase() == "rtf") {
+							data.context = jQuery('<p/>').text('Uploading...').appendTo(document.body);
+							data.submit();
+						}
+						else {
+							alert("[crm_fileextensions]");
+						}
+					}
+				}
+
+			},
+			done: function (e, data) {
+				jQuery("#allelements").empty();
+				jQuery("#fileattachment").empty();
+
+				jQuery.each(data.result.files, function (index, file) {
+
+					var filenamewithoutextension = file.uniqueFileName.substr(0, file.uniqueFileName.lastIndexOf('.')) || file.uniqueFileName;
+
+					var strlink = "<span onclick='deleteFile(\"" + file.uniqueFileName + "\");'><i class='icon-cancel'></i></span>";
+					var strFileDownloadLink = "filesaction.asp?action=download&hid=[filehash]&folder=temp&file=" + file.uniqueFileName + "";
+					jQuery("#files").append('<p id="' + file.uniqueFileName + '"  class="' + filenamewithoutextension + '"  ><a id=' + filenamewithoutextension + ' href= ' + strFileDownloadLink + '>' + file.name + '</a><span class="item-remove" >' + strlink + '</span></p>');
+
+					list.push(file.uniqueFileName);
+
+				});
+
+				jQuery("#fileattachment").val(list);
+
+
+			},
+			progressall: function (e, data) {
+				bUploading = true;
+				var progress = parseInt(data.loaded / data.total * 100, 10);
+				if (progress >= 100)
+					bUploading = false;
+
+				jQuery('#progress .bar').css(
+					'width',
+					progress + '%'
+				);
+			},
+		});
+	});
+
+	function deleteFile(fileName) {
+		var delyesno = (confirm("[crm_confirm-delete]"));
+		if (delyesno) {
+			jQuery.get('filesaction.asp',
+			{
+				action: "delete",
+				file: fileName,
+				hid: '[filehash]',
+				folder: "temp",
+				confirm: true,
+				crmid: 0
+			},
+			function (result) {
+				try {
+					var msg = result.errorMsg;
+					if (msg != '' && msg != undefined) {
+						alert(msg);
+						return false;
+					}
+				}
+				catch (e) { }
+			});
+
+			jQuery('#progress .bar').css(
+				'width',
+				0 + '%'
+			);
+
+			var filenamewithoutextension = fileName.substr(0, fileName.lastIndexOf('.')) || fileName;
+			var filenamewithoutextension = filenamewithoutextension.replace('(', '\\(');
+			var filenamewithoutextension = filenamewithoutextension.replace(')', '\\)');
+
+			jQuery('.' + filenamewithoutextension).remove();
+
+			list.splice(list.indexOf(fileName), 1);
+			jQuery("#fileattachment").val(list);
+
+		}
+		return false;
+	}
+</script> 
+<!--END: crmFileAttachments_js-->  
+
+<!--END: template_scripts-->

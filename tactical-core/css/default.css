@@ -12,6 +12,12 @@ body {
   background: #dcdcdc;
   color: inherit;
 }
+
+
+h1 {
+	font-size: 30px;
+}
+
 .navbar-dark .navbar-brand {
   color: #fff;
 }
@@ -615,5 +621,70 @@ span.freeshipping {
 .rating:hover .rating-star:hover ~ .rating-star,
 .rating-input:checked ~ .rating-star,
 .reviews-stars {
-  color: #f0da98;
+  color: #e4c055;
+}
+
+
+
+.subcategories {
+  border-bottom: 1px solid #ececec;
+  padding: 0 0 30px;
+}
+.subcategories > ul > li > a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+.subcategories > ul > li > a:hover {
+  opacity: 0.8;
+}
+.subcategories > ul > li span.name {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.category-products {
+  padding: 35px 0 30px;
+}
+.category-actions {
+  padding: 0 0 35px;
+  margin: 0 0 35px;
+  border-bottom: 1px solid #ececec;
+}
+
+
+.form-control {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  height: 36px;
+  padding: 7px 12px;
+}
+.form-control.search-text {
+   border-color: #ececec;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.form_data {
+	float:left;
+	width:70%;
+}
+.form_data form{
+  margin:10px auto;
+  width: 100%;  
+}
+
+.col-md-2_4{
+  width: 100%;  
+}
+
+.wishlistView_details{
+  width: 90;
+  padding: 0 0 0 2%;  
 }

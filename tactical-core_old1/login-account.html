@@ -1,0 +1,202 @@
+<section id="loginAccount" class="loginAccount-page-content page-content">
+	<!--START: Prelogin_omit-->
+    <!--START: BODY_HEADER-->
+    <section class="breadcrumnb">
+        <div class="container">
+            <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Home</span></a></li>
+            	<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[account_header-myaccount]</span></li>
+            </ol>
+        </div>
+    </section>
+    <!--END: BODY_HEADER-->
+
+    <section class="page_header">
+        <div class="container">
+            <h1 class="page_heading">[account_header-myaccount]</h1>
+            <!--START: error_message-->
+            <div class="error pad10 boxShadow">[error_message]</div>
+            <!--END: error_message-->
+        </div>
+    </section>
+	<!--END: Prelogin_omit-->
+
+	<!--START: Prelogin_include-->
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <div class="beta-col col-lg-6 col-md-6">
+                  <div class="header">
+                    <h5>[registration_Header-createnewaccount]</h5>
+                  </div>
+                  <div class="createNewAccount pad10">
+                      <div class="height">
+                          <div class="loginField">
+                            <div>[registration_create-account]</div>
+                            <div class="clearfix"></div>
+                          </div>
+                      </div>
+                      <div class="submit-button">
+                        <button type="button" onclick="window.location='register.asp?cg=0';" class="btn btn-primary"><i class="icon-pencil"></i> [registration_button-createaccount]</button>
+                      </div>
+                      <!--START: fbconnect-->
+                      <div class="fbconnect">
+                      	<div class="or text-center">or</div>
+                        <a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign up with Facebook" class="btn btn-default btn-facebook"><i class="icon-facebook"></i> Sign Up with Facebook</a>
+                      </div>
+                      <!--END: fbconnect-->
+                  </div>
+                </div>
+                <div class="alpha-col col-lg-6 col-md-6">
+                  <div class="header">
+                    <h5>[login_Header-login]</h5>
+                  </div>
+                  <div class="myaccountLogin pad10">
+                    <form name="myaccountLogin" action="login.asp?ordertracking=[otrack][redirecturl]" class="bt-flabels js-flabels" method="post" id="frmForm">
+                      <input type="hidden" name="catalogid" value="[catalogid]" />
+                      <div class="height">
+                          <div class="loginField">
+                            <div>[login_Header-loginmessage]</div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="loginField">
+                            <label for="email" class="validation-field">
+								<input type="text" name="email" id="loginEmail" value="[email]" placeholder="[CustomerInfo_email]" size="30" tabindex="1" class="form-control txtBoxStyle" />
+								<span class="required-indicator"></span>
+                            </label>
+                          </div>
+                          <div class="loginField">
+                            <label for="password" class="validation-field">
+								<input type="password" name="password" id="loginpassword" autocomplete="off" placeholder="[CustomerInfo_password]" size="12" tabindex="2" class="form-control txtBoxStyle" />
+								<span class="required-indicator"></span>
+                            </label>
+                          </div>
+                          <!--START: captcha-->
+                          <div class="loginField">
+                            <label for="randomWord">[registration_verification]:</label>
+                            <div class="captcha"><img src="admin/image_pw.asp?cache=[now]" width="148" />
+                              <div class="captcha-text">[registration_verification_message]</div>
+                              <input type="text" name="randomWord" id="randomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="3" class="txtBoxStyle" />
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <!--END: captcha-->
+                          <!--START: recaptcha-->
+                          <div class="loginField">
+                            <label for="recaptcha_challenge_field">Verification:</label>
+                            <div class="recaptcha">
+                                <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+                                <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+                                <noscript>
+                                <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br />
+                                <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                                <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                                </noscript>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <!--END: recaptcha-->
+                          <!--START: recaptcharobot-->
+                          <script type="text/javascript">
+							var onSubmit = function (token) {
+								if ('[recaptcha_robot_size]' == 'invisible')
+									jQuery("#frmForm").submit();
+							}
+
+                            var onloadCallback = function () {
+                                grecaptcha.render('[recaptcha_control]', {
+                                'sitekey': '[recaptcha_key]',
+                                'theme': '[recaptcha_robot_theme]',
+                                'size': '[recaptcha_robot_size]',
+                                'type': '[recaptcha_robot_type]',
+                                'callback': onSubmit
+                              });
+							}
+                          </script>
+                          <script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                          <div id="divRobocop"></div>
+                         <!--START: verificationlabel--><br /><!--END: verificationlabel-->
+                          <!--END: recaptcharobot-->
+
+                      </div>
+                      <div class="loginField">
+                          <div class="submit-button">
+                            <button type="submit" id='submitted' name="submitted" class="btn btn-primary" onclick="validateLoginsInput(this.form);"><i class="icon-login"></i> [login_button]</button>
+                          </div>
+                          <!--START: fbconnect-->
+                          <div class="fbconnect">
+                            <div class="or text-center">or</div>
+                            <a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign in with Facebook"><button type="button" class="btn btn-default btn-facebook"><i class="icon-facebook"></i> Sign In with Facebook</button></a>
+                          </div>
+                          <!--END: fbconnect-->
+                      </div>
+                      <div class="loginField">
+                        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#resetPW"><i class="icon-cw"></i>[login_resetpasswordbutton]</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+	<!--END: Prelogin_include-->
+</section>
+
+<!--START: Prelogin_include-->
+<!-- Modal -->
+<div class="modal fade" id="resetPW" tabindex="-1" role="dialog" aria-labelledby="resetPWLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="resetPWLabel">Reset My Password</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>        
+      </div>
+      <div class="modal-body">
+        <form id="forgotPass" name="forgotPass" action="login.asp?action=forgotpass&ordertracking=[otrack][redirecturl]" method="post" class="bt-flabels js-flabels">
+            <div class="loginField bt-flabels__wrapper">
+                <label for="email">[CustomerInfo_email]</label>
+                <input type="email" name="email" id="Email4Password" value="[email]" placeholder="[CustomerInfo_email]" size="30" tabindex="1" class="form-control txtBoxStyle" required />
+                <div class="clearfix"></div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" onclick="resetLoginPass();" class="btn btn-primary btn-lg"><i class="icon-cw"></i>[login_resetpasswordbutton]</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script>
+<script type="text/javascript" src="/assets/templates/common-core/js/myaccount_login.js"></script>
+
+<script>
+
+	function validateLoginsInput(objForm) {
+
+	    //You should create the validator only after the definition of the HTML form
+	    var frmvalidator = new Validator("myaccountLogin");
+		frmvalidator.EnableMsgsTogether();
+	
+	    //frmvalidator.setAddnlValidationFunction("myaccountLogin");
+	
+		frmvalidator.addValidation("email", "req", "Please enter your email address");
+	    frmvalidator.addValidation("email", "maxlen=100", "Max length for Email is 100");
+		frmvalidator.addValidation("email", "email");
+	
+	    frmvalidator.addValidation("password","req","Please enter your password.");
+	}
+</script>
+
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/myaccount.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+<!--END: Prelogin_include-->

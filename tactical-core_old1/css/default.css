@@ -13,14 +13,14 @@ body {
   color: inherit;
 }
 .navbar-dark .navbar-brand {
-  color: #[header_text_color];
+  color: #fff;
 }
 .navbar-dark .navbar-brand:hover,
 .navbar-dark .navbar-brand:focus {
-  color: #[header_text_color];
+  color: #fff;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: #[header_text_color];
+  color: rgba(255, 255, 255, 0.5);
 }
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
@@ -33,7 +33,7 @@ body {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #[header_text_color];
+  color: #fff;
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
@@ -43,62 +43,62 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 .navbar-dark .navbar-text {
-  color: #[header_text_color];
+  color: rgba(255, 255, 255, 0.5);
 }
 .navbar-dark .navbar-text a {
-  color: #[header_text_color];
+  color: #fff;
 }
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
-  color: #[header_text_color];
+  color: #fff;
 }
 .bg-dark {
-  background-color: #[header_color] !important;
+  background-color: #343a40 !important;
 }
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-nav .nav-link {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.5);
 }
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.7);
 }
 .navbar-light .navbar-nav .nav-link.disabled {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.3);
 }
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-text {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.5);
 }
 .navbar-light .navbar-text a {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-text a:hover,
 .navbar-light .navbar-text a:focus {
-  color: #[nav_text_color];
+  color: rgba(0, 0, 0, 0.9);
 }
 .site-footer {
-  background: #[footer_color];
+  background: #000000;
   float: left;
-  color: #[footer_text_color];
+  color: #fff;
   margin: 2% 0 0 0;
   padding: .5% 0 .5% 0;
   width: 100%;
   font-size: 12pt;
 }
 .site-footer a {
-  color: #[footer_text_color];
+  color: #fff;
 }
 .site-footer a:visited {
-  color: #[footer_text_color];
+  color: #fff;
 }
 .site-footer a:hover {
   color: #afacac;
@@ -118,7 +118,7 @@ body {
   border: none;
   float: right;
   width: 43px;
-  color: #[footer_text_color];
+  color: #857f6f;
   background: transparent;
 }
 .btn-default.mailinglist-submit:hover,
@@ -364,7 +364,7 @@ ul.social-icons li.social-icons-label {
 .lower-nav-wrapper {
   float: left;
   width: 100%;
-  background: #[nav_color];
+  background: #807d7b;
   padding: 2% 0 2% 0;
 }
 @media (min-width: 1024px) {
@@ -387,12 +387,10 @@ ul.social-icons li.social-icons-label {
     margin: 1% 0 1% 0;
   }
 }
-
-
 .upper-nav-wrapper {
   float: left;
   width: 100%;
-  background: #[header_color] !important;
+  background: #343a40 !important;
 }
 @media (min-width: 1024px) {
   .upper-nav-wrapper {
@@ -414,7 +412,6 @@ ul.social-icons li.social-icons-label {
     padding: 2% 0 2% 0;
   }
 }
-
 .home-page-content .category-footer {
   padding: 20px 0 20px 0;
   margin-bottom: 0;
@@ -442,9 +439,6 @@ ul.social-icons li.social-icons-label {
 .home-page-content .category-header img {
   margin: 0 auto;
 }
-
-
-
 .btn {
   font-size: 18px;
   padding: 8px 12px;
@@ -452,31 +446,30 @@ ul.social-icons li.social-icons-label {
   text-transform: uppercase;
 }
 .btn-default {
-  border-color: #[btn2_border];
-  background-color: #[btn2_color];
-  color: #[btn2_text_color];
+  border-color: #1c1c1c;
+  background-color: #b8b3b3;
+  color: #1a1919;
 }
 .btn-default:hover,
-.btn-default:focus, 
+.btn-default:focus,
 .btn-default.focus {
-  border-color: #[btn2_border];
-  color: #[btn2_text_color];
-  background-color: #[btn2_color]; 
+  border-color: #1c1c1c;
+  color: #353434;
+  background-color: #d8d7d6;
 }
 .btn-default.btn-inverse,
 .btn-primary {
-  color: #[btn_text_color];
-  background-color: #[btn_color];
-  border-color: #[btn_border];
+  color: #1c1c1c;
+  background-color: #969592;
+  border-color: #1c1c1c;
 }
 .btn-default.btn-inverse:hover,
 .btn-primary:hover {
-  color: #[btn_text_color];
-  background-color: #[btn_color];
-  border-color: #[btn_color];
+  color: #c5c3be;
+  background-color: #757472;
+  border-color: #adaca9;
   opacity: 0.8;
 }
-
 /*
 ** Homepage
 */
@@ -488,7 +481,6 @@ ul.social-icons li.social-icons-label {
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
-
 .products-section {
   background-color: #fff;
   padding: 60px 0;
@@ -510,7 +502,6 @@ ul.social-icons li.social-icons-label {
     font-size: 30px;
   }
 }
-
 .page_heading {
   margin: 0 0 0;
   line-height: 1;
@@ -551,7 +542,7 @@ ul.social-icons li.social-icons-label {
   text-align: center;
   top: 0px;
   right: 10px;
-  background-color: #[sale_text];
+  background-color: #302c1e;
 }
 .product-item .img {
   min-height: 304px;
@@ -587,26 +578,21 @@ ul.social-icons li.social-icons-label {
     max-width: 270px;
   }
 }
-
-
 .sale-price {
-  color: #[sale_text];
+  color: #16af37;
 }
 del.original-price {
   font-weight: 500;
 }
 span.freeshipping {
-  color: #[free_shipping_text];
+  color: #00a888;
 }
-
 .catfooter-bg {
-    background: #[btn_color];
+  background: #b6b5b3;
 }
-
-.catfooter-bg .container{
-	max-width: 1060px;
+.catfooter-bg .container {
+  max-width: 1060px;
 }
-
 .reviews-stars {
   display: inline-block;
   overflow: hidden;
@@ -629,5 +615,5 @@ span.freeshipping {
 .rating:hover .rating-star:hover ~ .rating-star,
 .rating-input:checked ~ .rating-star,
 .reviews-stars {
-  color: #[stars_color];
+  color: #f0da98;
 }
