@@ -479,14 +479,20 @@ ul.social-icons li.social-icons-label {
 /*
 ** Homepage
 */
-.fullwidth-slider img {
-  width: 100%;
-}
+
 .flexslider {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
+
+.fullwidth-slider{
+  width: 100%;  
+}
+.fullwidth-slider img {
+  width: 100%;
+}
+
 .products-section {
   background-color: #fff;
   padding: 60px 0;
@@ -508,16 +514,28 @@ ul.social-icons li.social-icons-label {
     font-size: 30px;
   }
 }
+
 .page_heading {
   margin: 0 0 0;
   line-height: 1;
-  font-weight: 700;
-  text-transform: none;
+  font-weight: normal;
+  /* text-transform: none; */
   padding-bottom: 0px;
-  border-bottom: 0px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   position: relative;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
+
+.page_heading:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 1px;
+  border-bottom: 0px solid #000;
+}
+
 .product-items .product-item {
   text-align: center;
 }
@@ -687,4 +705,12 @@ span.freeshipping {
 .wishlistView_details{
   width: 90;
   padding: 0 0 0 2%;  
+}
+
+
+.titles {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
 }
